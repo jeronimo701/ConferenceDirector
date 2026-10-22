@@ -1,0 +1,137 @@
+{
+  "original_exe_sha256": "bf7a4a91faa12a57bfbcd7a1a57e2e63cbe38d475f424d97c7d255a9a1d5b312",
+  "python_bytecode": "3.13",
+  "decompiler": "ejfkdev/pycdc v0.6.0",
+  "modules": [
+    {
+      "module": "conference_director",
+      "bytecode": "bytecode/conference_director.pyc",
+      "source": "recovered-source/conference_director.py",
+      "disassembly": "disassembly/conference_director.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core",
+      "bytecode": "bytecode/director_core/__init__.pyc",
+      "source": "recovered-source/director_core/__init__.py",
+      "disassembly": "disassembly/director_core/__init__.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.app",
+      "bytecode": "bytecode/director_core/app.pyc",
+      "source": "recovered-source/director_core/app.py",
+      "disassembly": "disassembly/director_core/app.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.executables",
+      "bytecode": "bytecode/director_core/executables.pyc",
+      "source": "recovered-source/director_core/executables.py",
+      "disassembly": "disassembly/director_core/executables.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.image_show",
+      "bytecode": "bytecode/director_core/image_show.pyc",
+      "source": "recovered-source/director_core/image_show.py",
+      "disassembly": "disassembly/director_core/image_show.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.paths",
+      "bytecode": "bytecode/director_core/paths.pyc",
+      "source": "recovered-source/director_core/paths.py",
+      "disassembly": "disassembly/director_core/paths.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.process_manager",
+      "bytecode": "bytecode/director_core/process_manager.pyc",
+      "source": "recovered-source/director_core/process_manager.py",
+      "disassembly": "disassembly/director_core/process_manager.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.project_scanner",
+      "bytecode": "bytecode/director_core/project_scanner.pyc",
+      "source": "recovered-source/director_core/project_scanner.py",
+      "disassembly": "disassembly/director_core/project_scanner.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.screens",
+      "bytecode": "bytecode/director_core/screens.pyc",
+      "source": "recovered-source/director_core/screens.py",
+      "disassembly": "disassembly/director_core/screens.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.settings",
+      "bytecode": "bytecode/director_core/settings.pyc",
+      "source": "recovered-source/director_core/settings.py",
+      "disassembly": "disassembly/director_core/settings.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.telegram_connect_dialog",
+      "bytecode": "bytecode/director_core/telegram_connect_dialog.pyc",
+      "source": "recovered-source/director_core/telegram_connect_dialog.py",
+      "disassembly": "disassembly/director_core/telegram_connect_dialog.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.telegram_receiver",
+      "bytecode": "bytecode/director_core/telegram_receiver.pyc",
+      "source": "recovered-source/director_core/telegram_receiver.py",
+      "disassembly": "disassembly/director_core/telegram_receiver.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    },
+    {
+      "module": "director_core.timer",
+      "bytecode": "bytecode/director_core/timer.pyc",
+      "source": "recovered-source/director_core/timer.py",
+      "disassembly": "disassembly/director_core/timer.dis.txt",
+      "decompiler_exit": 0,
+      "syntax_valid": true,
+      "syntax_error": null,
+      "decompiler_messages": ""
+    }
+  ]
+}

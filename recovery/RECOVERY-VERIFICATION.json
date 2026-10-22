@@ -1,0 +1,1466 @@
+[
+  {
+    "module": "conference_director.py",
+    "exact_code_objects": 1,
+    "original_code_objects": 1,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\app.py",
+    "exact_code_objects": 129,
+    "original_code_objects": 139,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/__init__",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/build_ui",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/build_ui/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/build_ui/<lambda>:1",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_control_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_control_tab/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_control_tab/<lambda>:1",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_control_tab/<lambda>:2",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_control_tab/<lambda>:3",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_music_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_music_tab/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_music_tab/<lambda>:1",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_presentations_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_presentations_tab/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_images_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_images_tab/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_videos_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_videos_tab/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/sort_button_row",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/sort_button_row/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/set_sort_mode",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/register_pdf_fit_checkbox",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/register_pdf_fit_checkbox/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/on_pdf_fit_width_toggled",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/populate_font_combo",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/set_current_font_from_settings",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/save_timer_font",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/load_music_playlists",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/add_music_file_item",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/add_music_link_item",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/select_music_folder",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/scan_music_folder",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/scan_music_folder/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/save_music_playlists",
+        "match": false,
+        "different_fields": [
+          "co_code",
+          "co_exceptiontable"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/selected_music_file_path",
+        "match": false,
+        "different_fields": [
+          "co_code"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/selected_music_link",
+        "match": false,
+        "different_fields": [
+          "co_code"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/play_selected_music_file",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/play_music_file",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/play_selected_music_link",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/add_music_link",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/remove_selected_music_file",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/remove_selected_music_link",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/set_music_volume",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/stop_music",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/stop_music_link",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/on_music_media_status_changed",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/play_next_music_file",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_timer_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_timer_tab/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_quiz_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_quiz_tab/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_quiz_tab/<lambda>:1",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_telegram_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/make_settings_tab",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/powerpoint_mode_box",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/telegram_box",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/telegram_box/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/path_box",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/video_box",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/refresh_projects",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/select_projects_root",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/refresh_screens",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/update_control_screen_status",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/moveEvent",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/load_selected_project",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/fill_file_list",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/sorted_paths",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/sorted_paths/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/path_mtime",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/file_list_title",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/selected_screen",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/selected_project_dir",
+        "match": false,
+        "different_fields": [
+          "co_code"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/selected_project_key",
+        "match": false,
+        "different_fields": [
+          "co_code"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/selected_path",
+        "match": false,
+        "different_fields": [
+          "co_code"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/update_telegram_tab_info",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/close_output",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_selected_presentation",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/add_selected_presentation_to_run_list",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/add_selected_image_to_run_list",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/add_selected_video_to_run_list",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/add_run_item",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/remove_selected_run_item",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/load_project_queue",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/save_current_queue",
+        "match": false,
+        "different_fields": [
+          "co_code",
+          "co_exceptiontable"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/run_item_title",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_selected_run_item",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_next_run_item",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_run_data",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_next_presentation",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_presentation",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/pdf_kiosk_url",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_edge_kiosk",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/show_selected_image",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/show_image",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/start_carousel",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/next_carousel_image",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_selected_video",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_video",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/video_args",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/start_timer",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/start_timer_preset",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/on_timer_changed",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/on_timer_finished",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/play_alarm",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/refresh_quiz_links",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/add_quiz_link",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/remove_quiz_link",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/set_selected_quiz_primary",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/update_primary_quiz_label",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_primary_quiz",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_selected_quiz",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/launch_quiz_url",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/move_presentation_up",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/move_presentation_down",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/move_current_item",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/select_timer_background",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/pick_text_color",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/pick_outline_color",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/select_alarm_sound",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/load_alarm_sound",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/set_alarm_volume",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/browse_powerpoint",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/browse_edge",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/browse_video_player",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/browse_exe_into",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/open_telegram_connect_dialog",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/fetch_telegram_bot_link",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/start_telegram_receiver",
+        "match": false,
+        "different_fields": [
+          "co_code"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/stop_telegram_receiver",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/on_telegram_file_saved",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/on_telegram_offset_changed",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/switch_display",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/swap_control_and_output_screens",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/persist_settings",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/set_status",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ConferenceDirector/closeEvent",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/run",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\executables.py",
+    "exact_code_objects": 5,
+    "original_code_objects": 5,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/existing_exe",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/existing_exe/<genexpr>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/edge_extra_paths",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/powerpoint_extra_paths",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\image_show.py",
+    "exact_code_objects": 4,
+    "original_code_objects": 6,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenImage",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenImage/__init__",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenImage/show_image",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenImage/resizeEvent",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenImage/repaint_image",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\paths.py",
+    "exact_code_objects": 1,
+    "original_code_objects": 1,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\process_manager.py",
+    "exact_code_objects": 4,
+    "original_code_objects": 6,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ProcessManager",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/ProcessManager/__init__",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ProcessManager/start",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ProcessManager/close_all",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/ProcessManager/close_process",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\project_scanner.py",
+    "exact_code_objects": 2,
+    "original_code_objects": 6,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/Project",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/list_project_dirs",
+        "match": false,
+        "different_fields": [
+          "co_code",
+          "co_exceptiontable"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/list_project_dirs/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/scan_project",
+        "match": false,
+        "different_fields": [
+          "co_code",
+          "co_exceptiontable"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/scan_project/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\screens.py",
+    "exact_code_objects": 6,
+    "original_code_objects": 6,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/screen_title",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/app_screens",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/screen_index_of_widget",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/move_widget_to_screen",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/display_switch",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\settings.py",
+    "exact_code_objects": 4,
+    "original_code_objects": 4,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/default_settings",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/load_settings",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/save_settings",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\telegram_connect_dialog.py",
+    "exact_code_objects": 8,
+    "original_code_objects": 11,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/telegram_api_json",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog/__init__",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog/__init__/<lambda>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog/_open_getupdates_url",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog/_fetch_updates",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog/_parse_raw_json",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog/_selected_chat_id",
+        "match": false,
+        "different_fields": [
+          "co_code"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog/_copy_selected",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramChatFinderDialog/_apply_selected",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\telegram_receiver.py",
+    "exact_code_objects": 8,
+    "original_code_objects": 10,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/safe_filename",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/unique_path",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramReceiver",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/TelegramReceiver/__init__",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramReceiver/stop",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramReceiver/run",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramReceiver/_handle_update",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramReceiver/_message_file_payload",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TelegramReceiver/_download_file",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\timer.py",
+    "exact_code_objects": 17,
+    "original_code_objects": 21,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/TimerLogic",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/TimerLogic/__init__",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TimerLogic/start",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TimerLogic/tick",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TimerLogic/emit_time",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TimerLogic/pause_toggle",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TimerLogic/reset",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/TimerLogic/stop",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/OutlinedLabel",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/OutlinedLabel/__init__",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/OutlinedLabel/set_text",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/OutlinedLabel/set_style",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/OutlinedLabel/start_blink",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/OutlinedLabel/stop_blink",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/OutlinedLabel/toggle_visibility",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/OutlinedLabel/paintEvent",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenTimer",
+        "match": false,
+        "different_fields": [
+          "co_consts"
+        ],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenTimer/__init__",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenTimer/resizeEvent",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      },
+      {
+        "code": "/FullScreenTimer/update_time",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  },
+  {
+    "module": "director_core\\__init__.py",
+    "exact_code_objects": 1,
+    "original_code_objects": 1,
+    "extra_recovered_code_objects": [],
+    "details": [
+      {
+        "code": "<module>",
+        "match": true,
+        "different_fields": [],
+        "missing": false
+      }
+    ]
+  }
+]

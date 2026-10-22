@@ -1,0 +1,10 @@
+{
+  "method": "Manual corrections reconstructed from original bytecode; no new features intended",
+  "corrections": [
+    "Corrected is_file filter polarity in scan_music_folder",
+    "Corrected folder/exclusion filter polarities in list_project_dirs",
+    "Reconstructed nested loops, continue branches and try/except scope in TelegramChatFinderDialog._parse_raw_json",
+    "Restored original conditional while loop in TelegramReceiver.run",
+    "Refined JSON error handler to original exception-table range and early return; restored explicit None return in message file payload"
+  ]
+}

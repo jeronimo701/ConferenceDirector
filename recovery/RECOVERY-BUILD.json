@@ -1,0 +1,9 @@
+{
+  "build": "PASS",
+  "PyInstaller": "6.19.0",
+  "PySide6": "6.8.2.1",
+  "rebuilt_embedded_code_objects_match_original_under_documented_normalization": 217,
+  "total_original_code_objects": 217,
+  "rebuilt_binary_used_in_published_installer": false,
+  "note": "The published installer preserves the original D: executable; this rebuild only validates recovered source completeness."
+}
