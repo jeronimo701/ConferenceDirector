@@ -1,0 +1,98 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              0 (sys)
+              STORE_NAME               0 (sys)
+
+  2           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (('Path',))
+              IMPORT_NAME              1 (pathlib)
+              IMPORT_FROM              2 (Path)
+              STORE_NAME               2 (Path)
+              POP_TOP
+
+  5           LOAD_NAME                3 (getattr)
+              PUSH_NULL
+              LOAD_NAME                0 (sys)
+              LOAD_CONST               3 ('frozen')
+              LOAD_CONST               4 (False)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_FALSE       89 (to L3)
+
+  6           LOAD_NAME                2 (Path)
+              PUSH_NULL
+              LOAD_NAME                0 (sys)
+              LOAD_ATTR                8 (executable)
+              CALL                     1
+              LOAD_ATTR               11 (resolve + NULL|self)
+              CALL                     0
+              LOAD_ATTR               12 (parent)
+              STORE_NAME               7 (ROOT)
+
+  7           LOAD_NAME                2 (Path)
+              PUSH_NULL
+              LOAD_NAME                3 (getattr)
+              PUSH_NULL
+              LOAD_NAME                0 (sys)
+              LOAD_CONST               5 ('_MEIPASS')
+              LOAD_NAME                7 (ROOT)
+              CALL                     3
+              CALL                     1
+              STORE_NAME               8 (bundle_root)
+
+  8           LOAD_NAME                8 (bundle_root)
+              LOAD_CONST               6 ('director_core')
+              BINARY_OP               11 (/)
+              STORE_NAME               9 (package_in_bundle)
+
+  9           LOAD_NAME                9 (package_in_bundle)
+              LOAD_ATTR               21 (exists + NULL|self)
+              CALL                     0
+              TO_BOOL
+              POP_JUMP_IF_FALSE        2 (to L1)
+              LOAD_NAME                9 (package_in_bundle)
+              JUMP_FORWARD             1 (to L2)
+      L1:     LOAD_NAME                8 (bundle_root)
+      L2:     STORE_NAME              11 (APP_PACKAGE)
+              JUMP_FORWARD            44 (to L4)
+
+ 11   L3:     LOAD_NAME                2 (Path)
+              PUSH_NULL
+              LOAD_NAME               12 (__file__)
+              CALL                     1
+              LOAD_ATTR               11 (resolve + NULL|self)
+              CALL                     0
+              LOAD_ATTR               12 (parent)
+              STORE_NAME              11 (APP_PACKAGE)
+
+ 12           LOAD_NAME               11 (APP_PACKAGE)
+              LOAD_ATTR               12 (parent)
+              STORE_NAME               7 (ROOT)
+
+ 14   L4:     LOAD_NAME                7 (ROOT)
+              LOAD_CONST               6 ('director_core')
+              BINARY_OP               11 (/)
+              STORE_NAME              13 (SETTINGS_DIR)
+
+ 15           LOAD_NAME               13 (SETTINGS_DIR)
+              LOAD_CONST               7 ('conference_director_settings.json')
+              BINARY_OP               11 (/)
+              STORE_NAME              14 (SETTINGS_PATH)
+
+ 17           BUILD_SET                0
+              LOAD_CONST               8 (frozenset({'.pps', '.pptx', '.ppt', '.ppsx', '.pdf'}))
+              SET_UPDATE               1
+              STORE_NAME              15 (PRESENTATION_EXTS)
+
+ 18           BUILD_SET                0
+              LOAD_CONST               9 (frozenset({'.jpg', '.webp', '.jpeg', '.bmp', '.png', '.gif'}))
+              SET_UPDATE               1
+              STORE_NAME              16 (IMAGE_EXTS)
+
+ 19           BUILD_SET                0
+              LOAD_CONST              10 (frozenset({'.mkv', '.mov', '.webm', '.avi', '.m4v', '.wmv', '.mp4'}))
+              SET_UPDATE               1
+              STORE_NAME              17 (VIDEO_EXTS)
+              RETURN_CONST             1 (None)

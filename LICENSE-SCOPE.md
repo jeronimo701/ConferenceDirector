@@ -1,5 +1,5 @@
 # Область лицензии
 
-LICENSE.txt относится только к собственным частям Jeronimo701 в ConferenceDirector.exe: стартовому модулю conference_director и скомпилированным модулям director_core, director_core.app, executables, image_show, paths, process_manager, project_scanner, screens, settings, telegram_connect_dialog, telegram_receiver и timer. Собственные README и Setup.iss этой публикации включены в ту же область.
+LICENSE.txt относится к собственным частям Jeronimo701: conference_director, модулям director_core приложения и их восстановленным .py, извлечённому байткоду и дизассемблированному представлению, собственной документации и новым скриптам упаковки/восстановления структуры проекта. В ConferenceDirector.exe условия касаются только собственного скомпилированного кода.
 
-Python, Qt/PySide6, Shiboken, Microsoft runtime и PyInstaller не перелицензируются. Их исходные условия и права на замену/изучение модифицированных библиотек сохраняются. Оригинальные редактируемые исходники ConferenceDirector при подготовке публикации не найдены; размещается готовая сборка, а не полная исходная версия проекта.
+Python, Qt/PySide6, Shiboken, Microsoft runtime и PyInstaller не перелицензируются; права на сторонние компоненты, включая замену и изучение изменений библиотек, сохраняются. Восстановленные .py получены декомпиляцией, а не найдены среди первоначальных авторских файлов. Комментарии и исходное форматирование утрачены.

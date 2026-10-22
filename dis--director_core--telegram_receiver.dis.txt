@@ -1,0 +1,749 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (('annotations',))
+              IMPORT_NAME              0 (__future__)
+              IMPORT_FROM              1 (annotations)
+              STORE_NAME               1 (annotations)
+              POP_TOP
+
+  3           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              2 (re)
+              STORE_NAME               2 (re)
+
+  4           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              3 (urllib.parse)
+              STORE_NAME               4 (urllib)
+
+  5           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              5 (urllib.request)
+              STORE_NAME               4 (urllib)
+
+  6           LOAD_CONST               0 (0)
+              LOAD_CONST               3 (('Path',))
+              IMPORT_NAME              6 (pathlib)
+              IMPORT_FROM              7 (Path)
+              STORE_NAME               7 (Path)
+              POP_TOP
+
+  8           LOAD_CONST               0 (0)
+              LOAD_CONST               4 (('QThread', 'Signal'))
+              IMPORT_NAME              8 (PySide6.QtCore)
+              IMPORT_FROM              9 (QThread)
+              STORE_NAME               9 (QThread)
+              IMPORT_FROM             10 (Signal)
+              STORE_NAME              10 (Signal)
+              POP_TOP
+
+ 10           LOAD_CONST               5 (1)
+              LOAD_CONST               6 (('telegram_api_json',))
+              IMPORT_NAME             11 (telegram_connect_dialog)
+              IMPORT_FROM             12 (telegram_api_json)
+              STORE_NAME              12 (telegram_api_json)
+              POP_TOP
+
+ 13           LOAD_NAME                2 (re)
+              LOAD_ATTR               26 (compile)
+              PUSH_NULL
+              LOAD_CONST               7 ('[<>:"/\\\\|?*\\x00-\\x1f]')
+              CALL                     1
+              STORE_NAME              14 (SAFE_NAME_RE)
+
+ 16           LOAD_CONST              12 (('name', 'str', 'fallback', 'str', 'return', 'str'))
+              LOAD_CONST               8 (<code object safe_filename at 0x00000257252ED070, file "director_core\telegram_receiver.py", line 16>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              15 (safe_filename)
+
+ 21           LOAD_CONST              13 (('directory', 'Path', 'filename', 'str', 'return', 'Path'))
+              LOAD_CONST               9 (<code object unique_path at 0x0000025726B54CB0, file "director_core\telegram_receiver.py", line 21>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              STORE_NAME              16 (unique_path)
+
+ 35           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST              10 (<code object TelegramReceiver at 0x0000025726B905F0, file "director_core\telegram_receiver.py", line 35>)
+              MAKE_FUNCTION
+              LOAD_CONST              11 ('TelegramReceiver')
+              LOAD_NAME                9 (QThread)
+              CALL                     3
+              STORE_NAME              17 (TelegramReceiver)
+              RETURN_CONST             2 (None)
+
+Disassembly of <code object safe_filename at 0x00000257252ED070, file "director_core\telegram_receiver.py", line 16>:
+ 16           RESUME                   0
+
+ 17           LOAD_GLOBAL              0 (SAFE_NAME_RE)
+              LOAD_ATTR                3 (sub + NULL|self)
+              LOAD_CONST               1 ('_')
+              LOAD_FAST                0 (name)
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L1)
+              POP_TOP
+              LOAD_CONST               2 ('')
+      L1:     CALL                     2
+              LOAD_ATTR                5 (strip + NULL|self)
+              LOAD_CONST               3 (' .')
+              CALL                     1
+              STORE_FAST               0 (name)
+
+ 18           LOAD_FAST                0 (name)
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L2)
+              POP_TOP
+              LOAD_FAST                1 (fallback)
+      L2:     RETURN_VALUE
+
+Disassembly of <code object unique_path at 0x0000025726B54CB0, file "director_core\telegram_receiver.py", line 21>:
+ 21           RESUME                   0
+
+ 22           LOAD_FAST_LOAD_FAST      1 (directory, filename)
+              BINARY_OP               11 (/)
+              STORE_FAST               2 (path)
+
+ 23           LOAD_FAST                2 (path)
+              LOAD_ATTR                1 (exists + NULL|self)
+              CALL                     0
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L1)
+
+ 24           LOAD_FAST                2 (path)
+              RETURN_VALUE
+
+ 25   L1:     LOAD_FAST                2 (path)
+              LOAD_ATTR                2 (stem)
+              STORE_FAST               3 (stem)
+
+ 26           LOAD_FAST                2 (path)
+              LOAD_ATTR                4 (suffix)
+              STORE_FAST               4 (suffix)
+
+ 27           LOAD_CONST               1 (2)
+              STORE_FAST               5 (counter)
+
+ 28           NOP
+
+ 29   L2:     LOAD_FAST_LOAD_FAST      3 (directory, stem)
+              FORMAT_SIMPLE
+              LOAD_CONST               2 (' (')
+              LOAD_FAST                5 (counter)
+              FORMAT_SIMPLE
+              LOAD_CONST               3 (')')
+              LOAD_FAST                4 (suffix)
+              FORMAT_SIMPLE
+              BUILD_STRING             5
+              BINARY_OP               11 (/)
+              STORE_FAST               6 (candidate)
+
+ 30           LOAD_FAST                6 (candidate)
+              LOAD_ATTR                1 (exists + NULL|self)
+              CALL                     0
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L3)
+
+ 31           LOAD_FAST                6 (candidate)
+              RETURN_VALUE
+
+ 32   L3:     LOAD_FAST                5 (counter)
+              LOAD_CONST               4 (1)
+              BINARY_OP               13 (+=)
+              STORE_FAST               5 (counter)
+
+ 28           JUMP_BACKWARD           42 (to L2)
+
+Disassembly of <code object TelegramReceiver at 0x0000025726B905F0, file "director_core\telegram_receiver.py", line 35>:
+  --           MAKE_CELL                0 (__class__)
+
+  35           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('TelegramReceiver')
+               STORE_NAME               2 (__qualname__)
+               LOAD_CONST               1 (35)
+               STORE_NAME               3 (__firstlineno__)
+
+  36           LOAD_NAME                4 (Signal)
+               PUSH_NULL
+               LOAD_NAME                5 (str)
+               CALL                     1
+               STORE_NAME               6 (file_saved)
+
+  37           LOAD_NAME                4 (Signal)
+               PUSH_NULL
+               LOAD_NAME                5 (str)
+               CALL                     1
+               STORE_NAME               7 (status_changed)
+
+  38           LOAD_NAME                4 (Signal)
+               PUSH_NULL
+               LOAD_NAME                5 (str)
+               CALL                     1
+               STORE_NAME               8 (error)
+
+  39           LOAD_NAME                4 (Signal)
+               PUSH_NULL
+               LOAD_NAME                9 (int)
+               CALL                     1
+               STORE_NAME              10 (offset_changed)
+
+  41           LOAD_CONST               9 ((0,))
+               LOAD_CONST              10 (('token', 'str', 'chat_id', 'str', 'download_dir', 'Path', 'offset', 'int'))
+               LOAD_FAST                0 (__class__)
+               BUILD_TUPLE              1
+               LOAD_CONST               2 (<code object __init__ at 0x0000025726B346B0, file "director_core\telegram_receiver.py", line 41>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               SET_FUNCTION_ATTRIBUTE   1 (defaults)
+               STORE_NAME              11 (__init__)
+
+  49           LOAD_CONST               3 (<code object stop at 0x000002572529A130, file "director_core\telegram_receiver.py", line 49>)
+               MAKE_FUNCTION
+               STORE_NAME              12 (stop)
+
+  53           LOAD_CONST               4 (<code object run at 0x0000025724A555D0, file "director_core\telegram_receiver.py", line 53>)
+               MAKE_FUNCTION
+               STORE_NAME              13 (run)
+
+  75           LOAD_CONST              11 (('update', 'dict'))
+               LOAD_CONST               5 (<code object _handle_update at 0x0000025724B235C0, file "director_core\telegram_receiver.py", line 75>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME              14 (_handle_update)
+
+  88           LOAD_CONST              12 (('message', 'dict'))
+               LOAD_CONST               6 (<code object _message_file_payload at 0x0000025724F8E6C0, file "director_core\telegram_receiver.py", line 88>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME              15 (_message_file_payload)
+
+ 105           LOAD_CONST              13 (('file_id', 'str', 'filename', 'str', 'return', 'Path'))
+               LOAD_CONST               7 (<code object _download_file at 0x0000025724B20A30, file "director_core\telegram_receiver.py", line 105>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME              16 (_download_file)
+               LOAD_CONST               8 (('_stopping', 'chat_id', 'download_dir', 'offset', 'token'))
+               STORE_NAME              17 (__static_attributes__)
+               LOAD_FAST                0 (__class__)
+               COPY                     1
+               STORE_NAME              18 (__classcell__)
+               RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x0000025726B346B0, file "director_core\telegram_receiver.py", line 41>:
+  --           COPY_FREE_VARS           1
+
+  41           RESUME                   0
+
+  42           LOAD_GLOBAL              0 (super)
+               LOAD_DEREF               5 (__class__)
+               LOAD_FAST                0 (self)
+               LOAD_SUPER_ATTR          5 (__init__ + NULL|self)
+               CALL                     0
+               POP_TOP
+
+  43           LOAD_FAST_LOAD_FAST     16 (token, self)
+               STORE_ATTR               2 (token)
+
+  44           LOAD_GLOBAL              7 (str + NULL)
+               LOAD_FAST                2 (chat_id)
+               CALL                     1
+               LOAD_ATTR                9 (strip + NULL|self)
+               CALL                     0
+               LOAD_FAST                0 (self)
+               STORE_ATTR               5 (chat_id)
+
+  45           LOAD_GLOBAL             13 (Path + NULL)
+               LOAD_FAST                3 (download_dir)
+               CALL                     1
+               LOAD_FAST                0 (self)
+               STORE_ATTR               7 (download_dir)
+
+  46           LOAD_GLOBAL             17 (int + NULL)
+               LOAD_FAST                4 (offset)
+               COPY                     1
+               TO_BOOL
+               POP_JUMP_IF_TRUE         2 (to L1)
+               POP_TOP
+               LOAD_CONST               1 (0)
+       L1:     CALL                     1
+               LOAD_FAST                0 (self)
+               STORE_ATTR               9 (offset)
+
+  47           LOAD_CONST               2 (False)
+               LOAD_FAST                0 (self)
+               STORE_ATTR              10 (_stopping)
+               RETURN_CONST             0 (None)
+
+Disassembly of <code object stop at 0x000002572529A130, file "director_core\telegram_receiver.py", line 49>:
+ 49           RESUME                   0
+
+ 50           LOAD_CONST               1 (True)
+              LOAD_FAST                0 (self)
+              STORE_ATTR               0 (_stopping)
+
+ 51           LOAD_FAST                0 (self)
+              LOAD_ATTR                3 (requestInterruption + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object run at 0x0000025724A555D0, file "director_core\telegram_receiver.py", line 53>:
+  53            RESUME                   0
+
+  54            LOAD_FAST                0 (self)
+                LOAD_ATTR                0 (download_dir)
+                LOAD_ATTR                3 (mkdir + NULL|self)
+                LOAD_CONST               1 (True)
+                LOAD_CONST               1 (True)
+                LOAD_CONST               2 (('parents', 'exist_ok'))
+                CALL_KW                  2
+                POP_TOP
+
+  55            LOAD_FAST                0 (self)
+                LOAD_ATTR                4 (status_changed)
+                LOAD_ATTR                7 (emit + NULL|self)
+                LOAD_CONST               3 ('Telegram: слушаю новые файлы')
+                CALL                     1
+                POP_TOP
+
+  56            LOAD_FAST                0 (self)
+                LOAD_ATTR                8 (_stopping)
+                TO_BOOL
+                POP_JUMP_IF_TRUE       234 (to L6)
+                LOAD_FAST                0 (self)
+                LOAD_ATTR               11 (isInterruptionRequested + NULL|self)
+                CALL                     0
+                TO_BOOL
+                POP_JUMP_IF_TRUE       213 (to L6)
+
+  57    L1:     NOP
+
+  58    L2:     LOAD_GLOBAL             13 (telegram_api_json + NULL)
+
+  59            LOAD_FAST                0 (self)
+                LOAD_ATTR               14 (token)
+
+  60            LOAD_CONST               4 ('getUpdates')
+
+  61            LOAD_FAST                0 (self)
+                LOAD_ATTR               16 (offset)
+                LOAD_CONST               5 (2)
+                LOAD_CONST               6 ('["message","channel_post"]')
+                LOAD_CONST               7 (('offset', 'timeout', 'allowed_updates'))
+                BUILD_CONST_KEY_MAP      3
+
+  62            LOAD_CONST               8 (8)
+
+  58            LOAD_CONST               9 (('timeout',))
+                CALL_KW                  4
+                STORE_FAST               1 (data)
+
+  64            LOAD_FAST                1 (data)
+                LOAD_ATTR               19 (get + NULL|self)
+                LOAD_CONST              10 ('result')
+                BUILD_LIST               0
+                CALL                     2
+                GET_ITER
+        L3:     FOR_ITER               114 (to L4)
+                STORE_FAST               2 (update)
+
+  65            LOAD_GLOBAL             21 (int + NULL)
+                LOAD_FAST                2 (update)
+                LOAD_ATTR               19 (get + NULL|self)
+                LOAD_CONST              11 ('update_id')
+                LOAD_CONST              12 (0)
+                CALL                     2
+                CALL                     1
+                STORE_FAST               3 (update_id)
+
+  66            LOAD_GLOBAL             23 (max + NULL)
+                LOAD_FAST                0 (self)
+                LOAD_ATTR               16 (offset)
+                LOAD_FAST                3 (update_id)
+                LOAD_CONST              13 (1)
+                BINARY_OP                0 (+)
+                CALL                     2
+                LOAD_FAST                0 (self)
+                STORE_ATTR               8 (offset)
+
+  67            LOAD_FAST                0 (self)
+                LOAD_ATTR               24 (offset_changed)
+                LOAD_ATTR                7 (emit + NULL|self)
+                LOAD_FAST                0 (self)
+                LOAD_ATTR               16 (offset)
+                CALL                     1
+                POP_TOP
+
+  68            LOAD_FAST                0 (self)
+                LOAD_ATTR               27 (_handle_update + NULL|self)
+                LOAD_FAST                2 (update)
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD          116 (to L3)
+
+  64    L4:     END_FOR
+                POP_TOP
+
+  56    L5:     LOAD_FAST                0 (self)
+                LOAD_ATTR                8 (_stopping)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        23 (to L6)
+                LOAD_FAST                0 (self)
+                LOAD_ATTR               11 (isInterruptionRequested + NULL|self)
+                CALL                     0
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L6)
+                JUMP_BACKWARD          213 (to L1)
+
+  73    L6:     LOAD_FAST                0 (self)
+                LOAD_ATTR                4 (status_changed)
+                LOAD_ATTR                7 (emit + NULL|self)
+                LOAD_CONST              16 ('Telegram: остановлен')
+                CALL                     1
+                POP_TOP
+                RETURN_CONST             0 (None)
+
+  --    L7:     PUSH_EXC_INFO
+
+  69            LOAD_GLOBAL             28 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       74 (to L11)
+                STORE_FAST               4 (exc)
+
+  70    L8:     LOAD_FAST                0 (self)
+                LOAD_ATTR                8 (_stopping)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        47 (to L9)
+
+  71            LOAD_FAST                0 (self)
+                LOAD_ATTR               30 (error)
+                LOAD_ATTR                7 (emit + NULL|self)
+                LOAD_CONST              14 ('Telegram: ')
+                LOAD_FAST                4 (exc)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  72            LOAD_FAST                0 (self)
+                LOAD_ATTR               33 (msleep + NULL|self)
+                LOAD_CONST              15 (3000)
+                CALL                     1
+                POP_TOP
+
+  --    L9:     POP_EXCEPT
+                LOAD_CONST               0 (None)
+                STORE_FAST               4 (exc)
+                DELETE_FAST              4 (exc)
+                JUMP_BACKWARD_NO_INTERRUPT 147 (to L5)
+       L10:     LOAD_CONST               0 (None)
+                STORE_FAST               4 (exc)
+                DELETE_FAST              4 (exc)
+                RERAISE                  1
+
+  69   L11:     RERAISE                  0
+
+  --   L12:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L2 to L5 -> L7 [0]
+  L7 to L8 -> L12 [1] lasti
+  L8 to L9 -> L10 [1] lasti
+  L10 to L12 -> L12 [1] lasti
+
+Disassembly of <code object _handle_update at 0x0000025724B235C0, file "director_core\telegram_receiver.py", line 75>:
+ 75           RESUME                   0
+
+ 76           LOAD_FAST                1 (update)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               1 ('message')
+              CALL                     1
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE        26 (to L1)
+              POP_TOP
+              LOAD_FAST                1 (update)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               2 ('channel_post')
+              CALL                     1
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L1)
+              POP_TOP
+              BUILD_MAP                0
+      L1:     STORE_FAST               2 (message)
+
+ 77           LOAD_FAST                2 (message)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               3 ('chat')
+              CALL                     1
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L2)
+              POP_TOP
+              BUILD_MAP                0
+      L2:     STORE_FAST               3 (chat)
+
+ 78           LOAD_FAST                0 (self)
+              LOAD_ATTR                2 (chat_id)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       41 (to L3)
+              LOAD_GLOBAL              5 (str + NULL)
+              LOAD_FAST                3 (chat)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               4 ('id')
+              CALL                     1
+              CALL                     1
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                2 (chat_id)
+              COMPARE_OP             119 (bool(!=))
+              POP_JUMP_IF_FALSE        1 (to L3)
+
+ 79           RETURN_CONST             0 (None)
+
+ 81   L3:     LOAD_FAST                0 (self)
+              LOAD_ATTR                7 (_message_file_payload + NULL|self)
+              LOAD_FAST                2 (message)
+              CALL                     1
+              STORE_FAST               4 (payload)
+
+ 82           LOAD_FAST                4 (payload)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         1 (to L4)
+
+ 83           RETURN_CONST             0 (None)
+
+ 84   L4:     LOAD_FAST                4 (payload)
+              UNPACK_SEQUENCE          2
+              STORE_FAST_STORE_FAST   86 (file_id, filename)
+
+ 85           LOAD_FAST                0 (self)
+              LOAD_ATTR                9 (_download_file + NULL|self)
+              LOAD_FAST_LOAD_FAST     86 (file_id, filename)
+              CALL                     2
+              STORE_FAST               7 (saved_path)
+
+ 86           LOAD_FAST                0 (self)
+              LOAD_ATTR               10 (file_saved)
+              LOAD_ATTR               13 (emit + NULL|self)
+              LOAD_GLOBAL              5 (str + NULL)
+              LOAD_FAST                7 (saved_path)
+              CALL                     1
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object _message_file_payload at 0x0000025724F8E6C0, file "director_core\telegram_receiver.py", line 88>:
+ 88           RESUME                   0
+
+ 89           LOAD_FAST                1 (message)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               1 ('document')
+              CALL                     1
+              STORE_FAST               2 (document)
+
+ 90           LOAD_GLOBAL              3 (isinstance + NULL)
+              LOAD_FAST                2 (document)
+              LOAD_GLOBAL              4 (dict)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       44 (to L1)
+
+ 91           LOAD_FAST                2 (document)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               2 ('file_id')
+              CALL                     1
+              LOAD_GLOBAL              7 (safe_filename + NULL)
+              LOAD_FAST                2 (document)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               3 ('file_name')
+              CALL                     1
+              LOAD_CONST               4 ('telegram_file')
+              CALL                     2
+              BUILD_TUPLE              2
+              RETURN_VALUE
+
+ 93   L1:     LOAD_FAST                1 (message)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               5 ('video')
+              CALL                     1
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE        17 (to L2)
+              POP_TOP
+              LOAD_FAST                1 (message)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               6 ('animation')
+              CALL                     1
+      L2:     STORE_FAST               3 (video)
+
+ 94           LOAD_GLOBAL              3 (isinstance + NULL)
+              LOAD_FAST                3 (video)
+              LOAD_GLOBAL              4 (dict)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       44 (to L3)
+
+ 95           LOAD_FAST                3 (video)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               2 ('file_id')
+              CALL                     1
+              LOAD_GLOBAL              7 (safe_filename + NULL)
+              LOAD_FAST                3 (video)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               3 ('file_name')
+              CALL                     1
+              LOAD_CONST               7 ('telegram_video.mp4')
+              CALL                     2
+              BUILD_TUPLE              2
+              RETURN_VALUE
+
+ 97   L3:     LOAD_FAST                1 (message)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               8 ('photo')
+              CALL                     1
+              STORE_FAST               4 (photos)
+
+ 98           LOAD_GLOBAL              3 (isinstance + NULL)
+              LOAD_FAST                4 (photos)
+              LOAD_GLOBAL              8 (list)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       81 (to L4)
+              LOAD_FAST                4 (photos)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       74 (to L4)
+
+ 99           LOAD_FAST                4 (photos)
+              LOAD_CONST               9 (-1)
+              BINARY_SUBSCR
+              STORE_FAST               5 (largest)
+
+100           LOAD_GLOBAL              7 (safe_filename + NULL)
+              LOAD_FAST                1 (message)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST              10 ('caption')
+              LOAD_CONST              11 ('')
+              CALL                     2
+              LOAD_CONST              12 ('telegram_photo')
+              CALL                     2
+              STORE_FAST               6 (caption)
+
+101           LOAD_FAST                5 (largest)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               2 ('file_id')
+              CALL                     1
+              LOAD_GLOBAL             11 (Path + NULL)
+              LOAD_FAST                6 (caption)
+              CALL                     1
+              LOAD_ATTR               12 (stem)
+              FORMAT_SIMPLE
+              LOAD_CONST              13 ('.jpg')
+              BUILD_STRING             2
+              BUILD_TUPLE              2
+              RETURN_VALUE
+
+103   L4:     RETURN_CONST             0 (None)
+
+Disassembly of <code object _download_file at 0x0000025724B20A30, file "director_core\telegram_receiver.py", line 105>:
+ 105           RESUME                   0
+
+ 106           LOAD_GLOBAL              1 (telegram_api_json + NULL)
+               LOAD_FAST                0 (self)
+               LOAD_ATTR                2 (token)
+               LOAD_CONST               1 ('getFile')
+               LOAD_CONST               2 ('file_id')
+               LOAD_FAST                1 (file_id)
+               BUILD_MAP                1
+               LOAD_CONST               3 (20)
+               LOAD_CONST               4 (('timeout',))
+               CALL_KW                  4
+               STORE_FAST               3 (meta)
+
+ 107           LOAD_FAST                3 (meta)
+               LOAD_CONST               5 ('result')
+               BINARY_SUBSCR
+               LOAD_CONST               6 ('file_path')
+               BINARY_SUBSCR
+               STORE_FAST               4 (file_path)
+
+ 108           LOAD_CONST               7 ('https://api.telegram.org/file/bot')
+               LOAD_FAST                0 (self)
+               LOAD_ATTR                2 (token)
+               FORMAT_SIMPLE
+               LOAD_CONST               8 ('/')
+               LOAD_GLOBAL              4 (urllib)
+               LOAD_ATTR                6 (parse)
+               LOAD_ATTR                9 (quote + NULL|self)
+               LOAD_FAST                4 (file_path)
+               CALL                     1
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               STORE_FAST               5 (source_url)
+
+ 109           LOAD_GLOBAL             11 (unique_path + NULL)
+               LOAD_FAST                0 (self)
+               LOAD_ATTR               12 (download_dir)
+               LOAD_GLOBAL             15 (safe_filename + NULL)
+               LOAD_FAST                2 (filename)
+               LOAD_GLOBAL             17 (Path + NULL)
+               LOAD_FAST                4 (file_path)
+               CALL                     1
+               LOAD_ATTR               18 (name)
+               CALL                     2
+               CALL                     2
+               STORE_FAST               6 (target_path)
+
+ 110           LOAD_GLOBAL              4 (urllib)
+               LOAD_ATTR               20 (request)
+               LOAD_ATTR               23 (urlopen + NULL|self)
+               LOAD_FAST                5 (source_url)
+               LOAD_CONST               9 (120)
+               LOAD_CONST               4 (('timeout',))
+               CALL_KW                  2
+               BEFORE_WITH
+       L1:     STORE_FAST               7 (response)
+
+ 111           LOAD_FAST                6 (target_path)
+               LOAD_ATTR               25 (write_bytes + NULL|self)
+               LOAD_FAST                7 (response)
+               LOAD_ATTR               27 (read + NULL|self)
+               CALL                     0
+               CALL                     1
+               POP_TOP
+
+ 110   L2:     LOAD_CONST               0 (None)
+               LOAD_CONST               0 (None)
+               LOAD_CONST               0 (None)
+               CALL                     2
+               POP_TOP
+
+ 112           LOAD_FAST                6 (target_path)
+               RETURN_VALUE
+
+ 110   L3:     PUSH_EXC_INFO
+               WITH_EXCEPT_START
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L4)
+               RERAISE                  2
+       L4:     POP_TOP
+       L5:     POP_EXCEPT
+               POP_TOP
+               POP_TOP
+
+ 112           LOAD_FAST                6 (target_path)
+               RETURN_VALUE
+
+  --   L6:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L1 to L2 -> L3 [1] lasti
+  L3 to L5 -> L6 [3] lasti

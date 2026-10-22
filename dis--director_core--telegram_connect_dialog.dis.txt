@@ -1,0 +1,982 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (('annotations',))
+              IMPORT_NAME              0 (__future__)
+              IMPORT_FROM              1 (annotations)
+              STORE_NAME               1 (annotations)
+              POP_TOP
+
+  3           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              2 (json)
+              STORE_NAME               2 (json)
+
+  4           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              3 (urllib.parse)
+              STORE_NAME               4 (urllib)
+
+  5           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              5 (urllib.request)
+              STORE_NAME               4 (urllib)
+
+  6           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (None)
+              IMPORT_NAME              6 (webbrowser)
+              STORE_NAME               6 (webbrowser)
+
+  8           LOAD_CONST               0 (0)
+              LOAD_CONST               3 (('Qt',))
+              IMPORT_NAME              7 (PySide6.QtCore)
+              IMPORT_FROM              8 (Qt)
+              STORE_NAME               8 (Qt)
+              POP_TOP
+
+  9           LOAD_CONST               0 (0)
+              LOAD_CONST               4 (('QApplication', 'QDialog', 'QHBoxLayout', 'QLabel', 'QLineEdit', 'QListWidget', 'QListWidgetItem', 'QMessageBox', 'QPlainTextEdit', 'QPushButton', 'QVBoxLayout', 'QWidget'))
+              IMPORT_NAME              9 (PySide6.QtWidgets)
+              IMPORT_FROM             10 (QApplication)
+              STORE_NAME              10 (QApplication)
+              IMPORT_FROM             11 (QDialog)
+              STORE_NAME              11 (QDialog)
+              IMPORT_FROM             12 (QHBoxLayout)
+              STORE_NAME              12 (QHBoxLayout)
+              IMPORT_FROM             13 (QLabel)
+              STORE_NAME              13 (QLabel)
+              IMPORT_FROM             14 (QLineEdit)
+              STORE_NAME              14 (QLineEdit)
+              IMPORT_FROM             15 (QListWidget)
+              STORE_NAME              15 (QListWidget)
+              IMPORT_FROM             16 (QListWidgetItem)
+              STORE_NAME              16 (QListWidgetItem)
+              IMPORT_FROM             17 (QMessageBox)
+              STORE_NAME              17 (QMessageBox)
+              IMPORT_FROM             18 (QPlainTextEdit)
+              STORE_NAME              18 (QPlainTextEdit)
+              IMPORT_FROM             19 (QPushButton)
+              STORE_NAME              19 (QPushButton)
+              IMPORT_FROM             20 (QVBoxLayout)
+              STORE_NAME              20 (QVBoxLayout)
+              IMPORT_FROM             21 (QWidget)
+              STORE_NAME              21 (QWidget)
+              POP_TOP
+
+ 25           LOAD_CONST               8 ((None, 20))
+              LOAD_CONST               9 (('token', 'str', 'method', 'str', 'params', 'dict | None', 'timeout', 'int', 'return', 'dict'))
+              LOAD_CONST               5 (<code object telegram_api_json at 0x0000025724E03AA0, file "director_core\telegram_connect_dialog.py", line 25>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   4 (annotations)
+              SET_FUNCTION_ATTRIBUTE   1 (defaults)
+              STORE_NAME              22 (telegram_api_json)
+
+ 33           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               6 (<code object TelegramChatFinderDialog at 0x00000257252ECF30, file "director_core\telegram_connect_dialog.py", line 33>)
+              MAKE_FUNCTION
+              LOAD_CONST               7 ('TelegramChatFinderDialog')
+              LOAD_NAME               11 (QDialog)
+              CALL                     3
+              STORE_NAME              23 (TelegramChatFinderDialog)
+              RETURN_CONST             2 (None)
+
+Disassembly of <code object telegram_api_json at 0x0000025724E03AA0, file "director_core\telegram_connect_dialog.py", line 25>:
+  25           RESUME                   0
+
+  26           LOAD_CONST               1 ('https://api.telegram.org/bot')
+               LOAD_FAST                0 (token)
+               FORMAT_SIMPLE
+               LOAD_CONST               2 ('/')
+               LOAD_FAST                1 (method)
+               FORMAT_SIMPLE
+               BUILD_STRING             4
+               STORE_FAST               4 (url)
+
+  27           LOAD_FAST                2 (params)
+               TO_BOOL
+               POP_JUMP_IF_FALSE       37 (to L1)
+
+  28           LOAD_FAST                4 (url)
+               LOAD_CONST               3 ('?')
+               LOAD_GLOBAL              0 (urllib)
+               LOAD_ATTR                2 (parse)
+               LOAD_ATTR                5 (urlencode + NULL|self)
+               LOAD_FAST                2 (params)
+               CALL                     1
+               BINARY_OP                0 (+)
+               BINARY_OP               13 (+=)
+               STORE_FAST               4 (url)
+
+  29   L1:     LOAD_GLOBAL              0 (urllib)
+               LOAD_ATTR                6 (request)
+               LOAD_ATTR                9 (urlopen + NULL|self)
+               LOAD_FAST_LOAD_FAST     67 (url, timeout)
+               LOAD_CONST               4 (('timeout',))
+               CALL_KW                  2
+               BEFORE_WITH
+       L2:     STORE_FAST               5 (response)
+
+  30           LOAD_GLOBAL             10 (json)
+               LOAD_ATTR               12 (loads)
+               PUSH_NULL
+               LOAD_FAST                5 (response)
+               LOAD_ATTR               15 (read + NULL|self)
+               CALL                     0
+               LOAD_ATTR               17 (decode + NULL|self)
+               LOAD_CONST               5 ('utf-8')
+               CALL                     1
+               CALL                     1
+
+  29   L3:     SWAP                     2
+               LOAD_CONST               0 (None)
+               LOAD_CONST               0 (None)
+               LOAD_CONST               0 (None)
+               CALL                     2
+               POP_TOP
+               RETURN_VALUE
+       L4:     PUSH_EXC_INFO
+               WITH_EXCEPT_START
+               TO_BOOL
+               POP_JUMP_IF_TRUE         1 (to L5)
+               RERAISE                  2
+       L5:     POP_TOP
+       L6:     POP_EXCEPT
+               POP_TOP
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+  --   L7:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L4 [1] lasti
+  L4 to L6 -> L7 [3] lasti
+
+Disassembly of <code object TelegramChatFinderDialog at 0x00000257252ECF30, file "director_core\telegram_connect_dialog.py", line 33>:
+  --           MAKE_CELL                0 (__class__)
+
+  33           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('TelegramChatFinderDialog')
+               STORE_NAME               2 (__qualname__)
+               LOAD_CONST               1 (33)
+               STORE_NAME               3 (__firstlineno__)
+
+  34           LOAD_CONST               2 ('Dialog from the old tool, kept request-free for this app.')
+               STORE_NAME               4 (__doc__)
+
+  36           LOAD_CONST              11 (('', None))
+               LOAD_CONST              12 (('token', 'str', 'parent', 'QWidget | None', 'return', 'None'))
+               LOAD_FAST                0 (__class__)
+               BUILD_TUPLE              1
+               LOAD_CONST               3 (<code object __init__ at 0x0000025724F8DE40, file "director_core\telegram_connect_dialog.py", line 36>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               SET_FUNCTION_ATTRIBUTE   1 (defaults)
+               STORE_NAME               5 (__init__)
+
+  91           LOAD_CONST              13 (('return', 'None'))
+               LOAD_CONST               4 (<code object _open_getupdates_url at 0x0000025726B544E0, file "director_core\telegram_connect_dialog.py", line 91>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME               6 (_open_getupdates_url)
+
+  98           LOAD_CONST              13 (('return', 'None'))
+               LOAD_CONST               5 (<code object _fetch_updates at 0x0000025724ABBDE0, file "director_core\telegram_connect_dialog.py", line 98>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME               7 (_fetch_updates)
+
+ 110           LOAD_CONST              13 (('return', 'None'))
+               LOAD_CONST               6 (<code object _parse_raw_json at 0x0000025724A54350, file "director_core\telegram_connect_dialog.py", line 110>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME               8 (_parse_raw_json)
+
+ 141           LOAD_CONST              14 (('return', 'str'))
+               LOAD_CONST               7 (<code object _selected_chat_id at 0x0000025726B34510, file "director_core\telegram_connect_dialog.py", line 141>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME               9 (_selected_chat_id)
+
+ 148           LOAD_CONST              13 (('return', 'None'))
+               LOAD_CONST               8 (<code object _copy_selected at 0x0000025726B30EA0, file "director_core\telegram_connect_dialog.py", line 148>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME              10 (_copy_selected)
+
+ 153           LOAD_CONST              13 (('return', 'None'))
+               LOAD_CONST               9 (<code object _apply_selected at 0x0000025726B54670, file "director_core\telegram_connect_dialog.py", line 153>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   4 (annotations)
+               STORE_NAME              11 (_apply_selected)
+               LOAD_CONST              10 (('apply_btn', 'candidates', 'copy_btn', 'fetch_btn', 'open_updates_btn', 'parse_btn', 'raw_edit', 'selected_chat_id', 'selected_token', 'token_edit'))
+               STORE_NAME              12 (__static_attributes__)
+               LOAD_FAST                0 (__class__)
+               COPY                     1
+               STORE_NAME              13 (__classcell__)
+               RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x0000025724F8DE40, file "director_core\telegram_connect_dialog.py", line 36>:
+  --           COPY_FREE_VARS           1
+               MAKE_CELL                0 (self)
+
+  36           RESUME                   0
+
+  37           LOAD_GLOBAL              0 (super)
+               LOAD_DEREF               8 (__class__)
+               LOAD_DEREF               0 (self)
+               LOAD_SUPER_ATTR          5 (__init__ + NULL|self)
+               LOAD_FAST                2 (parent)
+               CALL                     1
+               POP_TOP
+
+  38           LOAD_DEREF               0 (self)
+               LOAD_ATTR                5 (setWindowTitle + NULL|self)
+               LOAD_CONST               1 ('Поиск группы/канала Telegram')
+               CALL                     1
+               POP_TOP
+
+  39           LOAD_DEREF               0 (self)
+               LOAD_ATTR                7 (resize + NULL|self)
+               LOAD_CONST               2 (900)
+               LOAD_CONST               3 (620)
+               CALL                     2
+               POP_TOP
+
+  40           LOAD_CONST               4 ('')
+               LOAD_DEREF               0 (self)
+               STORE_ATTR               4 (selected_chat_id)
+
+  41           LOAD_FAST                1 (token)
+               LOAD_ATTR               11 (strip + NULL|self)
+               CALL                     0
+               LOAD_DEREF               0 (self)
+               STORE_ATTR               6 (selected_token)
+
+  43           LOAD_GLOBAL             15 (QVBoxLayout + NULL)
+               LOAD_DEREF               0 (self)
+               CALL                     1
+               STORE_FAST               3 (root)
+
+  44           LOAD_GLOBAL             17 (QLabel + NULL)
+
+  45           LOAD_CONST               5 ("1) Создай бота через <a href='https://t.me/BotFather'>@BotFather</a>. 2) Добавь бота в группу/канал и отправь туда сообщение. 3) Вставь token, получи updates и выбери chat_id.")
+
+  44           CALL                     1
+               STORE_FAST               4 (info)
+
+  49           LOAD_FAST                4 (info)
+               LOAD_ATTR               19 (setOpenExternalLinks + NULL|self)
+               LOAD_CONST               6 (True)
+               CALL                     1
+               POP_TOP
+
+  50           LOAD_FAST                4 (info)
+               LOAD_ATTR               21 (setWordWrap + NULL|self)
+               LOAD_CONST               6 (True)
+               CALL                     1
+               POP_TOP
+
+  51           LOAD_FAST                3 (root)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_FAST                4 (info)
+               CALL                     1
+               POP_TOP
+
+  53           LOAD_GLOBAL             25 (QHBoxLayout + NULL)
+               CALL                     0
+               STORE_FAST               5 (top)
+
+  54           LOAD_FAST                5 (top)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_GLOBAL             17 (QLabel + NULL)
+               LOAD_CONST               7 ('Bot token:')
+               CALL                     1
+               CALL                     1
+               POP_TOP
+
+  55           LOAD_GLOBAL             27 (QLineEdit + NULL)
+               LOAD_FAST                1 (token)
+               LOAD_ATTR               11 (strip + NULL|self)
+               CALL                     0
+               CALL                     1
+               LOAD_DEREF               0 (self)
+               STORE_ATTR              14 (token_edit)
+
+  56           LOAD_FAST                5 (top)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               28 (token_edit)
+               CALL                     1
+               POP_TOP
+
+  57           LOAD_GLOBAL             31 (QPushButton + NULL)
+               LOAD_CONST               8 ('Открыть getUpdates в браузере')
+               CALL                     1
+               LOAD_DEREF               0 (self)
+               STORE_ATTR              16 (open_updates_btn)
+
+  58           LOAD_DEREF               0 (self)
+               LOAD_ATTR               32 (open_updates_btn)
+               LOAD_ATTR               34 (clicked)
+               LOAD_ATTR               37 (connect + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               38 (_open_getupdates_url)
+               CALL                     1
+               POP_TOP
+
+  59           LOAD_FAST                5 (top)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               32 (open_updates_btn)
+               CALL                     1
+               POP_TOP
+
+  60           LOAD_FAST                3 (root)
+               LOAD_ATTR               41 (addLayout + NULL|self)
+               LOAD_FAST                5 (top)
+               CALL                     1
+               POP_TOP
+
+  62           LOAD_GLOBAL             25 (QHBoxLayout + NULL)
+               CALL                     0
+               STORE_FAST               6 (row)
+
+  63           LOAD_GLOBAL             31 (QPushButton + NULL)
+               LOAD_CONST               9 ('Запросить getUpdates')
+               CALL                     1
+               LOAD_DEREF               0 (self)
+               STORE_ATTR              21 (fetch_btn)
+
+  64           LOAD_DEREF               0 (self)
+               LOAD_ATTR               42 (fetch_btn)
+               LOAD_ATTR               34 (clicked)
+               LOAD_ATTR               37 (connect + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               44 (_fetch_updates)
+               CALL                     1
+               POP_TOP
+
+  65           LOAD_FAST                6 (row)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               42 (fetch_btn)
+               CALL                     1
+               POP_TOP
+
+  66           LOAD_GLOBAL             31 (QPushButton + NULL)
+               LOAD_CONST              10 ('Разобрать JSON')
+               CALL                     1
+               LOAD_DEREF               0 (self)
+               STORE_ATTR              23 (parse_btn)
+
+  67           LOAD_DEREF               0 (self)
+               LOAD_ATTR               46 (parse_btn)
+               LOAD_ATTR               34 (clicked)
+               LOAD_ATTR               37 (connect + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               48 (_parse_raw_json)
+               CALL                     1
+               POP_TOP
+
+  68           LOAD_FAST                6 (row)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               46 (parse_btn)
+               CALL                     1
+               POP_TOP
+
+  69           LOAD_FAST                6 (row)
+               LOAD_ATTR               51 (addStretch + NULL|self)
+               LOAD_CONST              11 (1)
+               CALL                     1
+               POP_TOP
+
+  70           LOAD_FAST                3 (root)
+               LOAD_ATTR               41 (addLayout + NULL|self)
+               LOAD_FAST                6 (row)
+               CALL                     1
+               POP_TOP
+
+  72           LOAD_GLOBAL             53 (QPlainTextEdit + NULL)
+               CALL                     0
+               LOAD_DEREF               0 (self)
+               STORE_ATTR              27 (raw_edit)
+
+  73           LOAD_DEREF               0 (self)
+               LOAD_ATTR               54 (raw_edit)
+               LOAD_ATTR               57 (setPlaceholderText + NULL|self)
+               LOAD_CONST              12 ("Сюда попадет JSON. Можно вставить вручную и нажать 'Разобрать JSON'.")
+               CALL                     1
+               POP_TOP
+
+  74           LOAD_FAST                3 (root)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               54 (raw_edit)
+               LOAD_CONST              11 (1)
+               LOAD_CONST              13 (('stretch',))
+               CALL_KW                  2
+               POP_TOP
+
+  76           LOAD_FAST                3 (root)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_GLOBAL             17 (QLabel + NULL)
+               LOAD_CONST              14 ('Найденные чаты (выбери строку):')
+               CALL                     1
+               CALL                     1
+               POP_TOP
+
+  77           LOAD_GLOBAL             59 (QListWidget + NULL)
+               CALL                     0
+               LOAD_DEREF               0 (self)
+               STORE_ATTR              30 (candidates)
+
+  78           LOAD_DEREF               0 (self)
+               LOAD_ATTR               60 (candidates)
+               LOAD_ATTR               62 (itemDoubleClicked)
+               LOAD_ATTR               37 (connect + NULL|self)
+               LOAD_FAST                0 (self)
+               BUILD_TUPLE              1
+               LOAD_CONST              15 (<code object <lambda> at 0x00000257252A2A60, file "director_core\telegram_connect_dialog.py", line 78>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               CALL                     1
+               POP_TOP
+
+  79           LOAD_FAST                3 (root)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               60 (candidates)
+               LOAD_CONST              11 (1)
+               LOAD_CONST              13 (('stretch',))
+               CALL_KW                  2
+               POP_TOP
+
+  81           LOAD_GLOBAL             25 (QHBoxLayout + NULL)
+               CALL                     0
+               STORE_FAST               7 (bottom)
+
+  82           LOAD_GLOBAL             31 (QPushButton + NULL)
+               LOAD_CONST              16 ('Скопировать выбранный ID')
+               CALL                     1
+               LOAD_DEREF               0 (self)
+               STORE_ATTR              32 (copy_btn)
+
+  83           LOAD_DEREF               0 (self)
+               LOAD_ATTR               64 (copy_btn)
+               LOAD_ATTR               34 (clicked)
+               LOAD_ATTR               37 (connect + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               66 (_copy_selected)
+               CALL                     1
+               POP_TOP
+
+  84           LOAD_FAST                7 (bottom)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               64 (copy_btn)
+               CALL                     1
+               POP_TOP
+
+  85           LOAD_GLOBAL             31 (QPushButton + NULL)
+               LOAD_CONST              17 ('Использовать выбранный ID')
+               CALL                     1
+               LOAD_DEREF               0 (self)
+               STORE_ATTR              34 (apply_btn)
+
+  86           LOAD_DEREF               0 (self)
+               LOAD_ATTR               68 (apply_btn)
+               LOAD_ATTR               34 (clicked)
+               LOAD_ATTR               37 (connect + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               70 (_apply_selected)
+               CALL                     1
+               POP_TOP
+
+  87           LOAD_FAST                7 (bottom)
+               LOAD_ATTR               23 (addWidget + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               68 (apply_btn)
+               CALL                     1
+               POP_TOP
+
+  88           LOAD_FAST                7 (bottom)
+               LOAD_ATTR               51 (addStretch + NULL|self)
+               LOAD_CONST              11 (1)
+               CALL                     1
+               POP_TOP
+
+  89           LOAD_FAST                3 (root)
+               LOAD_ATTR               41 (addLayout + NULL|self)
+               LOAD_FAST                7 (bottom)
+               CALL                     1
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+Disassembly of <code object <lambda> at 0x00000257252A2A60, file "director_core\telegram_connect_dialog.py", line 78>:
+  --           COPY_FREE_VARS           1
+
+  78           RESUME                   0
+               LOAD_DEREF               1 (self)
+               LOAD_ATTR                1 (_apply_selected + NULL|self)
+               CALL                     0
+               RETURN_VALUE
+
+Disassembly of <code object _open_getupdates_url at 0x0000025726B544E0, file "director_core\telegram_connect_dialog.py", line 91>:
+ 91           RESUME                   0
+
+ 92           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (token_edit)
+              LOAD_ATTR                3 (text + NULL|self)
+              CALL                     0
+              LOAD_ATTR                5 (strip + NULL|self)
+              CALL                     0
+              STORE_FAST               1 (token)
+
+ 93           LOAD_FAST                1 (token)
+              TO_BOOL
+              POP_JUMP_IF_TRUE        25 (to L1)
+
+ 94           LOAD_GLOBAL              6 (QMessageBox)
+              LOAD_ATTR                8 (warning)
+              PUSH_NULL
+              LOAD_FAST                0 (self)
+              LOAD_CONST               1 ('Token')
+              LOAD_CONST               2 ('Укажи bot token')
+              CALL                     3
+              POP_TOP
+
+ 95           RETURN_CONST             0 (None)
+
+ 96   L1:     LOAD_GLOBAL             10 (webbrowser)
+              LOAD_ATTR               12 (open)
+              PUSH_NULL
+              LOAD_CONST               3 ('https://api.telegram.org/bot')
+              LOAD_FAST                1 (token)
+              FORMAT_SIMPLE
+              LOAD_CONST               4 ('/getUpdates')
+              BUILD_STRING             3
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object _fetch_updates at 0x0000025724ABBDE0, file "director_core\telegram_connect_dialog.py", line 98>:
+  98           RESUME                   0
+
+  99           LOAD_FAST                0 (self)
+               LOAD_ATTR                0 (token_edit)
+               LOAD_ATTR                3 (text + NULL|self)
+               CALL                     0
+               LOAD_ATTR                5 (strip + NULL|self)
+               CALL                     0
+               STORE_FAST               1 (token)
+
+ 100           LOAD_FAST                1 (token)
+               TO_BOOL
+               POP_JUMP_IF_TRUE        25 (to L1)
+
+ 101           LOAD_GLOBAL              6 (QMessageBox)
+               LOAD_ATTR                8 (warning)
+               PUSH_NULL
+               LOAD_FAST                0 (self)
+               LOAD_CONST               1 ('Token')
+               LOAD_CONST               2 ('Укажи bot token')
+               CALL                     3
+               POP_TOP
+
+ 102           RETURN_CONST             0 (None)
+
+ 103   L1:     NOP
+
+ 104   L2:     LOAD_GLOBAL             11 (telegram_api_json + NULL)
+               LOAD_FAST                1 (token)
+               LOAD_CONST               3 ('getUpdates')
+               CALL                     2
+               STORE_FAST               2 (data)
+
+ 105           LOAD_FAST                0 (self)
+               LOAD_ATTR               12 (raw_edit)
+               LOAD_ATTR               15 (setPlainText + NULL|self)
+               LOAD_GLOBAL             16 (json)
+               LOAD_ATTR               18 (dumps)
+               PUSH_NULL
+               LOAD_FAST                2 (data)
+               LOAD_CONST               4 (False)
+               LOAD_CONST               5 (2)
+               LOAD_CONST               6 (('ensure_ascii', 'indent'))
+               CALL_KW                  3
+               CALL                     1
+               POP_TOP
+
+ 106           LOAD_FAST                0 (self)
+               LOAD_ATTR               21 (_parse_raw_json + NULL|self)
+               CALL                     0
+               POP_TOP
+       L3:     RETURN_CONST             0 (None)
+
+  --   L4:     PUSH_EXC_INFO
+
+ 107           LOAD_GLOBAL             22 (Exception)
+               CHECK_EXC_MATCH
+               POP_JUMP_IF_FALSE       37 (to L8)
+               STORE_FAST               3 (exc)
+
+ 108   L5:     LOAD_GLOBAL              6 (QMessageBox)
+               LOAD_ATTR               24 (critical)
+               PUSH_NULL
+               LOAD_FAST                0 (self)
+               LOAD_CONST               7 ('Telegram API')
+               LOAD_CONST               8 ('Ошибка запроса: ')
+               LOAD_FAST                3 (exc)
+               FORMAT_SIMPLE
+               BUILD_STRING             2
+               CALL                     3
+               POP_TOP
+       L6:     POP_EXCEPT
+               LOAD_CONST               0 (None)
+               STORE_FAST               3 (exc)
+               DELETE_FAST              3 (exc)
+               RETURN_CONST             0 (None)
+
+  --   L7:     LOAD_CONST               0 (None)
+               STORE_FAST               3 (exc)
+               DELETE_FAST              3 (exc)
+               RERAISE                  1
+
+ 107   L8:     RERAISE                  0
+
+  --   L9:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L4 [0]
+  L4 to L5 -> L9 [1] lasti
+  L5 to L6 -> L7 [1] lasti
+  L7 to L9 -> L9 [1] lasti
+
+Disassembly of <code object _parse_raw_json at 0x0000025724A54350, file "director_core\telegram_connect_dialog.py", line 110>:
+ 110            RESUME                   0
+
+ 111            LOAD_FAST                0 (self)
+                LOAD_ATTR                0 (candidates)
+                LOAD_ATTR                3 (clear + NULL|self)
+                CALL                     0
+                POP_TOP
+
+ 112            LOAD_FAST                0 (self)
+                LOAD_ATTR                4 (raw_edit)
+                LOAD_ATTR                7 (toPlainText + NULL|self)
+                CALL                     0
+                LOAD_ATTR                9 (strip + NULL|self)
+                CALL                     0
+                STORE_FAST               1 (raw)
+
+ 113            LOAD_FAST                1 (raw)
+                TO_BOOL
+                POP_JUMP_IF_TRUE         1 (to L1)
+
+ 114            RETURN_CONST             0 (None)
+
+ 115    L1:     NOP
+
+ 116    L2:     LOAD_GLOBAL             10 (json)
+                LOAD_ATTR               12 (loads)
+                PUSH_NULL
+                LOAD_FAST                1 (raw)
+                CALL                     1
+                STORE_FAST               2 (data)
+
+ 121    L3:     LOAD_GLOBAL             21 (set + NULL)
+                CALL                     0
+                STORE_FAST               4 (seen)
+
+ 122            LOAD_FAST                2 (data)
+                LOAD_ATTR               23 (get + NULL|self)
+                LOAD_CONST               3 ('result')
+                BUILD_LIST               0
+                CALL                     2
+                GET_ITER
+        L4:     EXTENDED_ARG             1
+                FOR_ITER               343 (to L11)
+                STORE_FAST               5 (update)
+
+ 123            LOAD_CONST               4 (('message', 'channel_post', 'edited_message', 'edited_channel_post'))
+                GET_ITER
+        L5:     EXTENDED_ARG             1
+                FOR_ITER               332 (to L10)
+                STORE_FAST               6 (key)
+
+ 124            LOAD_FAST                5 (update)
+                LOAD_ATTR               23 (get + NULL|self)
+                LOAD_FAST                6 (key)
+                CALL                     1
+                STORE_FAST               7 (obj)
+
+ 125            LOAD_GLOBAL             25 (isinstance + NULL)
+                LOAD_FAST                7 (obj)
+                LOAD_GLOBAL             26 (dict)
+                CALL                     2
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L6)
+
+ 126            JUMP_BACKWARD           44 (to L5)
+
+ 127    L6:     LOAD_FAST                7 (obj)
+                LOAD_ATTR               23 (get + NULL|self)
+                LOAD_CONST               5 ('chat')
+                BUILD_MAP                0
+                CALL                     2
+                STORE_FAST               8 (chat)
+
+ 128            LOAD_GLOBAL             29 (str + NULL)
+                LOAD_FAST                8 (chat)
+                LOAD_ATTR               23 (get + NULL|self)
+                LOAD_CONST               6 ('id')
+                LOAD_CONST               7 ('')
+                CALL                     2
+                CALL                     1
+                LOAD_ATTR                9 (strip + NULL|self)
+                CALL                     0
+                STORE_FAST               9 (chat_id)
+
+ 129            LOAD_FAST                9 (chat_id)
+                TO_BOOL
+                POP_JUMP_IF_FALSE        5 (to L7)
+                LOAD_FAST_LOAD_FAST    148 (chat_id, seen)
+                CONTAINS_OP              0
+                POP_JUMP_IF_FALSE        2 (to L8)
+
+ 130    L7:     JUMP_BACKWARD          117 (to L5)
+
+ 131    L8:     LOAD_FAST                4 (seen)
+                LOAD_ATTR               31 (add + NULL|self)
+                LOAD_FAST                9 (chat_id)
+                CALL                     1
+                POP_TOP
+
+ 132            LOAD_GLOBAL             29 (str + NULL)
+                LOAD_FAST                8 (chat)
+                LOAD_ATTR               23 (get + NULL|self)
+                LOAD_CONST               8 ('type')
+                LOAD_CONST               9 ('unknown')
+                CALL                     2
+                CALL                     1
+                STORE_FAST              10 (ctype)
+
+ 133            LOAD_GLOBAL             29 (str + NULL)
+                LOAD_FAST                8 (chat)
+                LOAD_ATTR               23 (get + NULL|self)
+                LOAD_CONST              10 ('title')
+                CALL                     1
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE        50 (to L9)
+                POP_TOP
+                LOAD_FAST                8 (chat)
+                LOAD_ATTR               23 (get + NULL|self)
+                LOAD_CONST              11 ('username')
+                CALL                     1
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE        26 (to L9)
+                POP_TOP
+                LOAD_FAST                8 (chat)
+                LOAD_ATTR               23 (get + NULL|self)
+                LOAD_CONST              12 ('first_name')
+                CALL                     1
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L9)
+                POP_TOP
+                LOAD_CONST              13 ('Без названия')
+        L9:     CALL                     1
+                STORE_FAST              11 (title)
+
+ 134            LOAD_GLOBAL             33 (QListWidgetItem + NULL)
+                LOAD_FAST               10 (ctype)
+                FORMAT_SIMPLE
+                LOAD_CONST              14 (': ')
+                LOAD_FAST               11 (title)
+                FORMAT_SIMPLE
+                LOAD_CONST              15 (' | id=')
+                LOAD_FAST                9 (chat_id)
+                FORMAT_SIMPLE
+                BUILD_STRING             5
+                CALL                     1
+                STORE_FAST              12 (item)
+
+ 135            LOAD_FAST               12 (item)
+                LOAD_ATTR               35 (setData + NULL|self)
+                LOAD_GLOBAL             36 (Qt)
+                LOAD_ATTR               38 (ItemDataRole)
+                LOAD_ATTR               40 (UserRole)
+                LOAD_FAST                9 (chat_id)
+                CALL                     2
+                POP_TOP
+
+ 136            LOAD_FAST                0 (self)
+                LOAD_ATTR                0 (candidates)
+                LOAD_ATTR               43 (addItem + NULL|self)
+                LOAD_FAST               12 (item)
+                CALL                     1
+                POP_TOP
+                EXTENDED_ARG             1
+                JUMP_BACKWARD          335 (to L5)
+
+ 123   L10:     END_FOR
+                POP_TOP
+                EXTENDED_ARG             1
+                JUMP_BACKWARD          346 (to L4)
+
+ 122   L11:     END_FOR
+                POP_TOP
+
+ 138            LOAD_FAST                4 (seen)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        28 (to L12)
+
+ 139            LOAD_FAST                0 (self)
+                LOAD_ATTR                0 (candidates)
+                LOAD_ATTR               43 (addItem + NULL|self)
+                LOAD_CONST              16 ('Пусто: отправь сообщение в нужный чат и повтори getUpdates.')
+                CALL                     1
+                POP_TOP
+                RETURN_CONST             0 (None)
+
+ 138   L12:     RETURN_CONST             0 (None)
+
+  --   L13:     PUSH_EXC_INFO
+
+ 117            LOAD_GLOBAL             14 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       37 (to L17)
+                STORE_FAST               3 (exc)
+
+ 118   L14:     LOAD_GLOBAL             16 (QMessageBox)
+                LOAD_ATTR               18 (warning)
+                PUSH_NULL
+                LOAD_FAST                0 (self)
+                LOAD_CONST               1 ('JSON')
+                LOAD_CONST               2 ('Не удалось разобрать JSON: ')
+                LOAD_FAST                3 (exc)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     3
+                POP_TOP
+
+ 119   L15:     POP_EXCEPT
+                LOAD_CONST               0 (None)
+                STORE_FAST               3 (exc)
+                DELETE_FAST              3 (exc)
+                RETURN_CONST             0 (None)
+
+  --   L16:     LOAD_CONST               0 (None)
+                STORE_FAST               3 (exc)
+                DELETE_FAST              3 (exc)
+                RERAISE                  1
+
+ 117   L17:     RERAISE                  0
+
+  --   L18:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L13 [0]
+  L13 to L14 -> L18 [1] lasti
+  L14 to L15 -> L16 [1] lasti
+  L16 to L18 -> L18 [1] lasti
+
+Disassembly of <code object _selected_chat_id at 0x0000025726B34510, file "director_core\telegram_connect_dialog.py", line 141>:
+141           RESUME                   0
+
+142           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (candidates)
+              LOAD_ATTR                3 (currentItem + NULL|self)
+              CALL                     0
+              STORE_FAST               1 (item)
+
+143           LOAD_FAST                1 (item)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         1 (to L1)
+
+144           RETURN_CONST             1 ('')
+
+145   L1:     LOAD_FAST                1 (item)
+              LOAD_ATTR                5 (data + NULL|self)
+              LOAD_GLOBAL              6 (Qt)
+              LOAD_ATTR                8 (ItemDataRole)
+              LOAD_ATTR               10 (UserRole)
+              CALL                     1
+              STORE_FAST               2 (value)
+
+146           LOAD_FAST                2 (value)
+              POP_JUMP_IF_NONE        25 (to L2)
+              LOAD_GLOBAL             13 (str + NULL)
+              LOAD_FAST                2 (value)
+              CALL                     1
+              LOAD_ATTR               15 (strip + NULL|self)
+              CALL                     0
+              RETURN_VALUE
+      L2:     LOAD_CONST               1 ('')
+              RETURN_VALUE
+
+Disassembly of <code object _copy_selected at 0x0000025726B30EA0, file "director_core\telegram_connect_dialog.py", line 148>:
+148           RESUME                   0
+
+149           LOAD_FAST                0 (self)
+              LOAD_ATTR                1 (_selected_chat_id + NULL|self)
+              CALL                     0
+              STORE_FAST               1 (chat_id)
+
+150           LOAD_FAST                1 (chat_id)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       37 (to L1)
+
+151           LOAD_GLOBAL              2 (QApplication)
+              LOAD_ATTR                4 (clipboard)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR                7 (setText + NULL|self)
+              LOAD_FAST                1 (chat_id)
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+150   L1:     RETURN_CONST             0 (None)
+
+Disassembly of <code object _apply_selected at 0x0000025726B54670, file "director_core\telegram_connect_dialog.py", line 153>:
+153           RESUME                   0
+
+154           LOAD_FAST                0 (self)
+              LOAD_ATTR                1 (_selected_chat_id + NULL|self)
+              CALL                     0
+              STORE_FAST               1 (chat_id)
+
+155           LOAD_FAST                1 (chat_id)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         1 (to L1)
+
+156           RETURN_CONST             0 (None)
+
+157   L1:     LOAD_FAST_LOAD_FAST     16 (chat_id, self)
+              STORE_ATTR               1 (selected_chat_id)
+
+158           LOAD_FAST                0 (self)
+              LOAD_ATTR                4 (token_edit)
+              LOAD_ATTR                7 (text + NULL|self)
+              CALL                     0
+              LOAD_ATTR                9 (strip + NULL|self)
+              CALL                     0
+              LOAD_FAST                0 (self)
+              STORE_ATTR               5 (selected_token)
+
+159           LOAD_FAST                0 (self)
+              LOAD_ATTR               13 (accept + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)

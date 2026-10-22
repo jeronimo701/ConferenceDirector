@@ -1,0 +1,30 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              0 (sys)
+              STORE_NAME               0 (sys)
+
+  3           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (('run',))
+              IMPORT_NAME              1 (director_core.app)
+              IMPORT_FROM              2 (run)
+              STORE_NAME               2 (run)
+              POP_TOP
+
+  6           LOAD_NAME                3 (__name__)
+              LOAD_CONST               3 ('__main__')
+              COMPARE_OP              88 (bool(==))
+              POP_JUMP_IF_FALSE       24 (to L1)
+
+  7           LOAD_NAME                0 (sys)
+              LOAD_ATTR                8 (exit)
+              PUSH_NULL
+              LOAD_NAME                2 (run)
+              PUSH_NULL
+              CALL                     0
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             1 (None)
+
+  6   L1:     RETURN_CONST             1 (None)

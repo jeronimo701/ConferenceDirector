@@ -1,0 +1,143 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              0 (subprocess)
+              STORE_NAME               0 (subprocess)
+
+  4           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               2 (<code object ProcessManager at 0x0000025725299B30, file "director_core\process_manager.py", line 4>)
+              MAKE_FUNCTION
+              LOAD_CONST               3 ('ProcessManager')
+              CALL                     2
+              STORE_NAME               1 (ProcessManager)
+              RETURN_CONST             1 (None)
+
+Disassembly of <code object ProcessManager at 0x0000025725299B30, file "director_core\process_manager.py", line 4>:
+  4           RESUME                   0
+              LOAD_NAME                0 (__name__)
+              STORE_NAME               1 (__module__)
+              LOAD_CONST               0 ('ProcessManager')
+              STORE_NAME               2 (__qualname__)
+              LOAD_CONST               1 (4)
+              STORE_NAME               3 (__firstlineno__)
+
+  5           LOAD_CONST               2 (<code object __init__ at 0x0000025726B74B90, file "director_core\process_manager.py", line 5>)
+              MAKE_FUNCTION
+              STORE_NAME               4 (__init__)
+
+  8           LOAD_CONST               3 (<code object start at 0x00000257247BBCC0, file "director_core\process_manager.py", line 8>)
+              MAKE_FUNCTION
+              STORE_NAME               5 (start)
+
+ 13           LOAD_CONST               4 (<code object close_all at 0x0000025726B849B0, file "director_core\process_manager.py", line 13>)
+              MAKE_FUNCTION
+              STORE_NAME               6 (close_all)
+
+ 17           LOAD_CONST               5 (<code object close_process at 0x0000025724D57120, file "director_core\process_manager.py", line 17>)
+              MAKE_FUNCTION
+              STORE_NAME               7 (close_process)
+              LOAD_CONST               6 (('processes',))
+              STORE_NAME               8 (__static_attributes__)
+              RETURN_CONST             7 (None)
+
+Disassembly of <code object __init__ at 0x0000025726B74B90, file "director_core\process_manager.py", line 5>:
+  5           RESUME                   0
+
+  6           BUILD_LIST               0
+              LOAD_FAST                0 (self)
+              STORE_ATTR               0 (processes)
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object start at 0x00000257247BBCC0, file "director_core\process_manager.py", line 8>:
+  8           RESUME                   0
+
+  9           LOAD_GLOBAL              0 (subprocess)
+              LOAD_ATTR                2 (Popen)
+              PUSH_NULL
+              LOAD_FAST                1 (args)
+              CALL                     1
+              STORE_FAST               2 (process)
+
+ 10           LOAD_FAST                0 (self)
+              LOAD_ATTR                4 (processes)
+              LOAD_ATTR                7 (append + NULL|self)
+              LOAD_FAST                2 (process)
+              CALL                     1
+              POP_TOP
+
+ 11           LOAD_FAST                2 (process)
+              RETURN_VALUE
+
+Disassembly of <code object close_all at 0x0000025726B849B0, file "director_core\process_manager.py", line 13>:
+ 13           RESUME                   0
+
+ 14           LOAD_GLOBAL              1 (list + NULL)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                2 (processes)
+              CALL                     1
+              GET_ITER
+      L1:     FOR_ITER                20 (to L2)
+              STORE_FAST               1 (process)
+
+ 15           LOAD_FAST                0 (self)
+              LOAD_ATTR                5 (close_process + NULL|self)
+              LOAD_FAST                1 (process)
+              CALL                     1
+              POP_TOP
+              JUMP_BACKWARD           22 (to L1)
+
+ 14   L2:     END_FOR
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object close_process at 0x0000025724D57120, file "director_core\process_manager.py", line 17>:
+ 17           RESUME                   0
+
+ 18           LOAD_FAST                1 (process)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       64 (to L1)
+              LOAD_FAST                1 (process)
+              LOAD_ATTR                1 (poll + NULL|self)
+              CALL                     0
+              POP_JUMP_IF_NOT_NONE    47 (to L1)
+
+ 19           LOAD_GLOBAL              2 (subprocess)
+              LOAD_ATTR                4 (run)
+              PUSH_NULL
+
+ 20           LOAD_CONST               1 ('taskkill')
+              LOAD_CONST               2 ('/PID')
+              LOAD_GLOBAL              7 (str + NULL)
+              LOAD_FAST                1 (process)
+              LOAD_ATTR                8 (pid)
+              CALL                     1
+              LOAD_CONST               3 ('/T')
+              LOAD_CONST               4 ('/F')
+              BUILD_LIST               5
+
+ 21           LOAD_CONST               5 (True)
+
+ 22           LOAD_CONST               5 (True)
+
+ 23           LOAD_CONST               6 (5)
+
+ 19           LOAD_CONST               7 (('capture_output', 'text', 'timeout'))
+              CALL_KW                  4
+              POP_TOP
+
+ 25   L1:     LOAD_FAST_LOAD_FAST     16 (process, self)
+              LOAD_ATTR               10 (processes)
+              CONTAINS_OP              0
+              POP_JUMP_IF_FALSE       28 (to L2)
+
+ 26           LOAD_FAST                0 (self)
+              LOAD_ATTR               10 (processes)
+              LOAD_ATTR               13 (remove + NULL|self)
+              LOAD_FAST                1 (process)
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+ 25   L2:     RETURN_CONST             0 (None)

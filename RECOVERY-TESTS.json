@@ -1,0 +1,82 @@
+{
+  "original_and_recovered_outputs_match": true,
+  "checks": {
+    "project_dirs": [
+      "Alpha",
+      "beta"
+    ],
+    "project_scan": {
+      "presentations": [
+        "document.PDF",
+        "slides.pptx"
+      ],
+      "images": [
+        "photo.png"
+      ],
+      "videos": [
+        "clip.mp4"
+      ]
+    },
+    "telegram_candidates": [
+      "123",
+      "456"
+    ],
+    "invalid_json_handled": true,
+    "telegram_payloads": [
+      null,
+      [
+        "a",
+        "x.txt"
+      ],
+      [
+        "b",
+        "telegram_video.mp4"
+      ],
+      [
+        "d",
+        "test.jpg"
+      ],
+      null
+    ],
+    "timer_events": [
+      "00:00:02",
+      "00:00:01",
+      "00:00:00",
+      "00:00:00"
+    ],
+    "window_title": "Conference Director",
+    "music_scan": [
+      "A.WAV",
+      "b.mp3"
+    ],
+    "selected_project": "Alpha",
+    "selected_music_link": "",
+    "tabs": [
+      "Пульт",
+      "Музыка",
+      "Презентации",
+      "Картинки",
+      "Видео",
+      "Таймер",
+      "Квиз",
+      "Telegram",
+      "Настройки"
+    ]
+  },
+  "test_scope": [
+    "offscreen main window construction and clean close",
+    "synthetic project folder filtering and media classification",
+    "synthetic music file filtering",
+    "settings save and reload in isolated fixture",
+    "offline Telegram chat JSON parsing, deduplication and malformed JSON",
+    "offline Telegram file payload selection",
+    "timer countdown and finish signals"
+  ],
+  "not_tested": [
+    "Telegram network calls and downloads",
+    "real external players or PowerPoint",
+    "physical display switching and additional monitors"
+  ],
+  "original_and_recovered_preview_bytes_equal": false,
+  "test_only_font_setup": "Windows Segoe UI and Arial loaded in offscreen harness; no application source change"
+}

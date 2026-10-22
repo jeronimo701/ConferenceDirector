@@ -1,0 +1,17 @@
+{
+  "installer_compile": "PASS",
+  "installer_exit_code": 0,
+  "extracted_files_sha256_match": 208,
+  "original_exe_preserved": true,
+  "saved_settings_excluded": true,
+  "gitleaks": "PASS",
+  "recovered_modules": 13,
+  "normalized_structural_code_objects_match": "217/217",
+  "rebuilt_exe_code_objects_match": "217/217",
+  "original_bytecode_and_recovered_synthetic_tests": "PASS",
+  "not_tested": [
+    "Telegram network and downloads",
+    "external media players or PowerPoint",
+    "physical display switching and additional monitors"
+  ]
+}

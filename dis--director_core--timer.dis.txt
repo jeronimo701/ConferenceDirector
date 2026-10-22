@@ -1,0 +1,886 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (('QObject', 'Qt', 'QTimer', 'Signal'))
+              IMPORT_NAME              0 (PySide6.QtCore)
+              IMPORT_FROM              1 (QObject)
+              STORE_NAME               1 (QObject)
+              IMPORT_FROM              2 (Qt)
+              STORE_NAME               2 (Qt)
+              IMPORT_FROM              3 (QTimer)
+              STORE_NAME               3 (QTimer)
+              IMPORT_FROM              4 (Signal)
+              STORE_NAME               4 (Signal)
+              POP_TOP
+
+  2           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (('QColor', 'QFont', 'QPainter', 'QPixmap'))
+              IMPORT_NAME              5 (PySide6.QtGui)
+              IMPORT_FROM              6 (QColor)
+              STORE_NAME               6 (QColor)
+              IMPORT_FROM              7 (QFont)
+              STORE_NAME               7 (QFont)
+              IMPORT_FROM              8 (QPainter)
+              STORE_NAME               8 (QPainter)
+              IMPORT_FROM              9 (QPixmap)
+              STORE_NAME               9 (QPixmap)
+              POP_TOP
+
+  3           LOAD_CONST               0 (0)
+              LOAD_CONST               3 (('QLabel', 'QVBoxLayout', 'QWidget'))
+              IMPORT_NAME             10 (PySide6.QtWidgets)
+              IMPORT_FROM             11 (QLabel)
+              STORE_NAME              11 (QLabel)
+              IMPORT_FROM             12 (QVBoxLayout)
+              STORE_NAME              12 (QVBoxLayout)
+              IMPORT_FROM             13 (QWidget)
+              STORE_NAME              13 (QWidget)
+              POP_TOP
+
+  6           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               4 (<code object TimerLogic at 0x00000257252ED1B0, file "director_core\timer.py", line 6>)
+              MAKE_FUNCTION
+              LOAD_CONST               5 ('TimerLogic')
+              LOAD_NAME                1 (QObject)
+              CALL                     3
+              STORE_NAME              14 (TimerLogic)
+
+ 61           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               6 (<code object OutlinedLabel at 0x0000025726B43CF0, file "director_core\timer.py", line 61>)
+              MAKE_FUNCTION
+              LOAD_CONST               7 ('OutlinedLabel')
+              LOAD_NAME               13 (QWidget)
+              CALL                     3
+              STORE_NAME              15 (OutlinedLabel)
+
+115           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               8 (<code object FullScreenTimer at 0x000002572529A530, file "director_core\timer.py", line 115>)
+              MAKE_FUNCTION
+              LOAD_CONST               9 ('FullScreenTimer')
+              LOAD_NAME               13 (QWidget)
+              CALL                     3
+              STORE_NAME              16 (FullScreenTimer)
+              RETURN_CONST            10 (None)
+
+Disassembly of <code object TimerLogic at 0x00000257252ED1B0, file "director_core\timer.py", line 6>:
+  --           MAKE_CELL                0 (__class__)
+
+   6           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('TimerLogic')
+               STORE_NAME               2 (__qualname__)
+               LOAD_CONST               1 (6)
+               STORE_NAME               3 (__firstlineno__)
+
+   7           LOAD_NAME                4 (Signal)
+               PUSH_NULL
+               LOAD_NAME                5 (str)
+               CALL                     1
+               STORE_NAME               6 (time_changed)
+
+   8           LOAD_NAME                4 (Signal)
+               PUSH_NULL
+               CALL                     0
+               STORE_NAME               7 (finished)
+
+   9           LOAD_NAME                4 (Signal)
+               PUSH_NULL
+               CALL                     0
+               STORE_NAME               8 (pre_alert)
+
+  11           LOAD_FAST                0 (__class__)
+               BUILD_TUPLE              1
+               LOAD_CONST               2 (<code object __init__ at 0x0000025726BAC030, file "director_core\timer.py", line 11>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               9 (__init__)
+
+  21           LOAD_CONST               3 (<code object start at 0x0000025726B908D0, file "director_core\timer.py", line 21>)
+               MAKE_FUNCTION
+               STORE_NAME              10 (start)
+
+  30           LOAD_CONST               4 (<code object tick at 0x0000025724B211E0, file "director_core\timer.py", line 30>)
+               MAKE_FUNCTION
+               STORE_NAME              11 (tick)
+
+  44           LOAD_CONST               5 (<code object emit_time at 0x0000025726B90A40, file "director_core\timer.py", line 44>)
+               MAKE_FUNCTION
+               STORE_NAME              12 (emit_time)
+
+  49           LOAD_CONST               6 (<code object pause_toggle at 0x000002572529A230, file "director_core\timer.py", line 49>)
+               MAKE_FUNCTION
+               STORE_NAME              13 (pause_toggle)
+
+  52           LOAD_CONST               7 (<code object reset at 0x0000025726B43990, file "director_core\timer.py", line 52>)
+               MAKE_FUNCTION
+               STORE_NAME              14 (reset)
+
+  57           LOAD_CONST               8 (<code object stop at 0x000002572529A330, file "director_core\timer.py", line 57>)
+               MAKE_FUNCTION
+               STORE_NAME              15 (stop)
+               LOAD_CONST               9 (('duration', 'is_paused', 'pre_alert_time', 'pre_alert_triggered', 'time_left', 'timer'))
+               STORE_NAME              16 (__static_attributes__)
+               LOAD_FAST                0 (__class__)
+               COPY                     1
+               STORE_NAME              17 (__classcell__)
+               RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x0000025726BAC030, file "director_core\timer.py", line 11>:
+  --           COPY_FREE_VARS           1
+
+  11           RESUME                   0
+
+  12           LOAD_GLOBAL              0 (super)
+               LOAD_DEREF               1 (__class__)
+               LOAD_FAST                0 (self)
+               LOAD_SUPER_ATTR          5 (__init__ + NULL|self)
+               CALL                     0
+               POP_TOP
+
+  13           LOAD_CONST               1 (0)
+               LOAD_FAST                0 (self)
+               STORE_ATTR               2 (duration)
+
+  14           LOAD_CONST               1 (0)
+               LOAD_FAST                0 (self)
+               STORE_ATTR               3 (time_left)
+
+  15           LOAD_CONST               1 (0)
+               LOAD_FAST                0 (self)
+               STORE_ATTR               4 (pre_alert_time)
+
+  16           LOAD_CONST               2 (False)
+               LOAD_FAST                0 (self)
+               STORE_ATTR               5 (pre_alert_triggered)
+
+  17           LOAD_CONST               2 (False)
+               LOAD_FAST                0 (self)
+               STORE_ATTR               6 (is_paused)
+
+  18           LOAD_GLOBAL             15 (QTimer + NULL)
+               CALL                     0
+               LOAD_FAST                0 (self)
+               STORE_ATTR               8 (timer)
+
+  19           LOAD_FAST                0 (self)
+               LOAD_ATTR               16 (timer)
+               LOAD_ATTR               18 (timeout)
+               LOAD_ATTR               21 (connect + NULL|self)
+               LOAD_FAST                0 (self)
+               LOAD_ATTR               22 (tick)
+               CALL                     1
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+Disassembly of <code object start at 0x0000025726B908D0, file "director_core\timer.py", line 21>:
+ 21           RESUME                   0
+
+ 22           LOAD_FAST_LOAD_FAST     16 (duration, self)
+              STORE_ATTR               0 (duration)
+
+ 23           LOAD_FAST_LOAD_FAST     16 (duration, self)
+              STORE_ATTR               1 (time_left)
+
+ 24           LOAD_FAST                2 (pre_alert_minutes)
+              LOAD_CONST               1 (60)
+              BINARY_OP                5 (*)
+              LOAD_FAST                0 (self)
+              STORE_ATTR               2 (pre_alert_time)
+
+ 25           LOAD_CONST               2 (False)
+              LOAD_FAST                0 (self)
+              STORE_ATTR               3 (pre_alert_triggered)
+
+ 26           LOAD_CONST               2 (False)
+              LOAD_FAST                0 (self)
+              STORE_ATTR               4 (is_paused)
+
+ 27           LOAD_FAST                0 (self)
+              LOAD_ATTR               10 (timer)
+              LOAD_ATTR               13 (start + NULL|self)
+              LOAD_CONST               3 (1000)
+              CALL                     1
+              POP_TOP
+
+ 28           LOAD_FAST                0 (self)
+              LOAD_ATTR               15 (emit_time + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object tick at 0x0000025724B211E0, file "director_core\timer.py", line 30>:
+ 30           RESUME                   0
+
+ 31           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (is_paused)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        1 (to L1)
+
+ 32           RETURN_CONST             0 (None)
+
+ 33   L1:     LOAD_FAST                0 (self)
+              LOAD_ATTR                2 (time_left)
+              LOAD_CONST               1 (0)
+              COMPARE_OP             148 (bool(>))
+              POP_JUMP_IF_FALSE      114 (to L3)
+
+ 34           LOAD_FAST                0 (self)
+              COPY                     1
+              LOAD_ATTR                2 (time_left)
+              LOAD_CONST               2 (1)
+              BINARY_OP               23 (-=)
+              SWAP                     2
+              STORE_ATTR               1 (time_left)
+
+ 35           LOAD_FAST                0 (self)
+              LOAD_ATTR                5 (emit_time + NULL|self)
+              CALL                     0
+              POP_TOP
+
+ 36           LOAD_FAST                0 (self)
+              LOAD_ATTR                2 (time_left)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                6 (pre_alert_time)
+              COMPARE_OP              58 (bool(<=))
+              POP_JUMP_IF_FALSE       50 (to L2)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                8 (pre_alert_triggered)
+              TO_BOOL
+              POP_JUMP_IF_TRUE        33 (to L2)
+
+ 37           LOAD_CONST               3 (True)
+              LOAD_FAST                0 (self)
+              STORE_ATTR               4 (pre_alert_triggered)
+
+ 38           LOAD_FAST                0 (self)
+              LOAD_ATTR               10 (pre_alert)
+              LOAD_ATTR               13 (emit + NULL|self)
+              CALL                     0
+              POP_TOP
+
+ 39   L2:     RETURN_CONST             0 (None)
+
+ 40   L3:     LOAD_FAST                0 (self)
+              LOAD_ATTR               14 (timer)
+              LOAD_ATTR               17 (stop + NULL|self)
+              CALL                     0
+              POP_TOP
+
+ 41           LOAD_FAST                0 (self)
+              LOAD_ATTR                5 (emit_time + NULL|self)
+              CALL                     0
+              POP_TOP
+
+ 42           LOAD_FAST                0 (self)
+              LOAD_ATTR               18 (finished)
+              LOAD_ATTR               13 (emit + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object emit_time at 0x0000025726B90A40, file "director_core\timer.py", line 44>:
+ 44           RESUME                   0
+
+ 45           LOAD_GLOBAL              1 (divmod + NULL)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                2 (time_left)
+              LOAD_CONST               1 (60)
+              CALL                     2
+              UNPACK_SEQUENCE          2
+              STORE_FAST_STORE_FAST   18 (minutes, seconds)
+
+ 46           LOAD_GLOBAL              1 (divmod + NULL)
+              LOAD_FAST                1 (minutes)
+              LOAD_CONST               1 (60)
+              CALL                     2
+              UNPACK_SEQUENCE          2
+              STORE_FAST_STORE_FAST   49 (hours, minutes)
+
+ 47           LOAD_FAST                0 (self)
+              LOAD_ATTR                4 (time_changed)
+              LOAD_ATTR                7 (emit + NULL|self)
+              LOAD_FAST                3 (hours)
+              LOAD_CONST               2 ('02d')
+              FORMAT_WITH_SPEC
+              LOAD_CONST               3 (':')
+              LOAD_FAST                1 (minutes)
+              LOAD_CONST               2 ('02d')
+              FORMAT_WITH_SPEC
+              LOAD_CONST               3 (':')
+              LOAD_FAST                2 (seconds)
+              LOAD_CONST               2 ('02d')
+              FORMAT_WITH_SPEC
+              BUILD_STRING             5
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object pause_toggle at 0x000002572529A230, file "director_core\timer.py", line 49>:
+ 49           RESUME                   0
+
+ 50           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (is_paused)
+              TO_BOOL
+              UNARY_NOT
+              LOAD_FAST                0 (self)
+              STORE_ATTR               0 (is_paused)
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object reset at 0x0000025726B43990, file "director_core\timer.py", line 52>:
+ 52           RESUME                   0
+
+ 53           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (duration)
+              LOAD_FAST                0 (self)
+              STORE_ATTR               1 (time_left)
+
+ 54           LOAD_CONST               1 (False)
+              LOAD_FAST                0 (self)
+              STORE_ATTR               2 (pre_alert_triggered)
+
+ 55           LOAD_FAST                0 (self)
+              LOAD_ATTR                7 (emit_time + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object stop at 0x000002572529A330, file "director_core\timer.py", line 57>:
+ 57           RESUME                   0
+
+ 58           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (timer)
+              LOAD_ATTR                3 (stop + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object OutlinedLabel at 0x0000025726B43CF0, file "director_core\timer.py", line 61>:
+  --           MAKE_CELL                0 (__class__)
+
+  61           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('OutlinedLabel')
+               STORE_NAME               2 (__qualname__)
+               LOAD_CONST               1 (61)
+               STORE_NAME               3 (__firstlineno__)
+
+  62           LOAD_FAST                0 (__class__)
+               BUILD_TUPLE              1
+               LOAD_CONST               2 (<code object __init__ at 0x0000025726B9C430, file "director_core\timer.py", line 62>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__init__)
+
+  73           LOAD_CONST               3 (<code object set_text at 0x000002572529A430, file "director_core\timer.py", line 73>)
+               MAKE_FUNCTION
+               STORE_NAME               5 (set_text)
+
+  77           LOAD_CONST               4 (<code object set_style at 0x0000025726B43AB0, file "director_core\timer.py", line 77>)
+               MAKE_FUNCTION
+               STORE_NAME               6 (set_style)
+
+  84           LOAD_CONST               5 (<code object start_blink at 0x0000025726B94360, file "director_core\timer.py", line 84>)
+               MAKE_FUNCTION
+               STORE_NAME               7 (start_blink)
+
+  87           LOAD_CONST               6 (<code object stop_blink at 0x0000025726B84D40, file "director_core\timer.py", line 87>)
+               MAKE_FUNCTION
+               STORE_NAME               8 (stop_blink)
+
+  92           LOAD_CONST               7 (<code object toggle_visibility at 0x0000025726B43BD0, file "director_core\timer.py", line 92>)
+               MAKE_FUNCTION
+               STORE_NAME               9 (toggle_visibility)
+
+  96           LOAD_CONST               8 (<code object paintEvent at 0x0000025724BA09B0, file "director_core\timer.py", line 96>)
+               MAKE_FUNCTION
+               STORE_NAME              10 (paintEvent)
+               LOAD_CONST               9 (('blink_timer', 'font', 'outline_color', 'outline_width', 'text', 'text_color', 'visible'))
+               STORE_NAME              11 (__static_attributes__)
+               LOAD_FAST                0 (__class__)
+               COPY                     1
+               STORE_NAME              12 (__classcell__)
+               RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x0000025726B9C430, file "director_core\timer.py", line 62>:
+  --           COPY_FREE_VARS           1
+
+  62           RESUME                   0
+
+  63           LOAD_GLOBAL              0 (super)
+               LOAD_DEREF               1 (__class__)
+               LOAD_FAST                0 (self)
+               LOAD_SUPER_ATTR          5 (__init__ + NULL|self)
+               CALL                     0
+               POP_TOP
+
+  64           LOAD_CONST               1 ('00:00:00')
+               LOAD_FAST                0 (self)
+               STORE_ATTR               2 (text)
+
+  65           LOAD_GLOBAL              7 (QFont + NULL)
+               LOAD_CONST               2 ('Arial')
+               LOAD_CONST               3 (160)
+               CALL                     2
+               LOAD_FAST                0 (self)
+               STORE_ATTR               4 (font)
+
+  66           LOAD_GLOBAL             11 (QColor + NULL)
+               LOAD_CONST               4 ('white')
+               CALL                     1
+               LOAD_FAST                0 (self)
+               STORE_ATTR               6 (text_color)
+
+  67           LOAD_GLOBAL             11 (QColor + NULL)
+               LOAD_CONST               5 ('black')
+               CALL                     1
+               LOAD_FAST                0 (self)
+               STORE_ATTR               7 (outline_color)
+
+  68           LOAD_CONST               6 (4)
+               LOAD_FAST                0 (self)
+               STORE_ATTR               8 (outline_width)
+
+  69           LOAD_CONST               7 (True)
+               LOAD_FAST                0 (self)
+               STORE_ATTR               9 (visible)
+
+  70           LOAD_GLOBAL             21 (QTimer + NULL)
+               CALL                     0
+               LOAD_FAST                0 (self)
+               STORE_ATTR              11 (blink_timer)
+
+  71           LOAD_FAST                0 (self)
+               LOAD_ATTR               22 (blink_timer)
+               LOAD_ATTR               24 (timeout)
+               LOAD_ATTR               27 (connect + NULL|self)
+               LOAD_FAST                0 (self)
+               LOAD_ATTR               28 (toggle_visibility)
+               CALL                     1
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+Disassembly of <code object set_text at 0x000002572529A430, file "director_core\timer.py", line 73>:
+ 73           RESUME                   0
+
+ 74           LOAD_FAST_LOAD_FAST     16 (text, self)
+              STORE_ATTR               0 (text)
+
+ 75           LOAD_FAST                0 (self)
+              LOAD_ATTR                3 (update + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object set_style at 0x0000025726B43AB0, file "director_core\timer.py", line 77>:
+ 77           RESUME                   0
+
+ 78           LOAD_FAST_LOAD_FAST     16 (font, self)
+              STORE_ATTR               0 (font)
+
+ 79           LOAD_FAST_LOAD_FAST     32 (text_color, self)
+              STORE_ATTR               1 (text_color)
+
+ 80           LOAD_FAST_LOAD_FAST     48 (outline_color, self)
+              STORE_ATTR               2 (outline_color)
+
+ 81           LOAD_FAST_LOAD_FAST     64 (outline_width, self)
+              STORE_ATTR               3 (outline_width)
+
+ 82           LOAD_FAST                0 (self)
+              LOAD_ATTR                9 (update + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object start_blink at 0x0000025726B94360, file "director_core\timer.py", line 84>:
+ 84           RESUME                   0
+
+ 85           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (blink_timer)
+              LOAD_ATTR                3 (start + NULL|self)
+              LOAD_CONST               1 (500)
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object stop_blink at 0x0000025726B84D40, file "director_core\timer.py", line 87>:
+ 87           RESUME                   0
+
+ 88           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (blink_timer)
+              LOAD_ATTR                3 (stop + NULL|self)
+              CALL                     0
+              POP_TOP
+
+ 89           LOAD_CONST               1 (True)
+              LOAD_FAST                0 (self)
+              STORE_ATTR               2 (visible)
+
+ 90           LOAD_FAST                0 (self)
+              LOAD_ATTR                7 (update + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object toggle_visibility at 0x0000025726B43BD0, file "director_core\timer.py", line 92>:
+ 92           RESUME                   0
+
+ 93           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (visible)
+              TO_BOOL
+              UNARY_NOT
+              LOAD_FAST                0 (self)
+              STORE_ATTR               0 (visible)
+
+ 94           LOAD_FAST                0 (self)
+              LOAD_ATTR                3 (update + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object paintEvent at 0x0000025724BA09B0, file "director_core\timer.py", line 96>:
+ 96           RESUME                   0
+
+ 97           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (visible)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         1 (to L1)
+
+ 98           RETURN_CONST             0 (None)
+
+ 99   L1:     LOAD_GLOBAL              3 (QPainter + NULL)
+              LOAD_FAST                0 (self)
+              CALL                     1
+              STORE_FAST               2 (painter)
+
+100           LOAD_FAST                2 (painter)
+              LOAD_ATTR                5 (setRenderHint + NULL|self)
+              LOAD_GLOBAL              2 (QPainter)
+              LOAD_ATTR                6 (Antialiasing)
+              CALL                     1
+              POP_TOP
+
+101           LOAD_FAST                2 (painter)
+              LOAD_ATTR                9 (setFont + NULL|self)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               10 (font)
+              CALL                     1
+              POP_TOP
+
+102           LOAD_FAST                2 (painter)
+              LOAD_ATTR               13 (fontMetrics + NULL|self)
+              CALL                     0
+              STORE_FAST               3 (metrics)
+
+103           LOAD_FAST                3 (metrics)
+              LOAD_ATTR               15 (horizontalAdvance + NULL|self)
+              LOAD_CONST               1 ('00:00:00')
+              CALL                     1
+              STORE_FAST               4 (text_width)
+
+104           LOAD_FAST                0 (self)
+              LOAD_ATTR               17 (width + NULL|self)
+              CALL                     0
+              LOAD_FAST                4 (text_width)
+              BINARY_OP               10 (-)
+              LOAD_CONST               2 (2)
+              BINARY_OP                2 (//)
+              STORE_FAST               5 (x)
+
+105           LOAD_FAST                0 (self)
+              LOAD_ATTR               19 (height + NULL|self)
+              CALL                     0
+              LOAD_FAST                3 (metrics)
+              LOAD_ATTR               19 (height + NULL|self)
+              CALL                     0
+              BINARY_OP                0 (+)
+              LOAD_CONST               2 (2)
+              BINARY_OP                2 (//)
+              LOAD_FAST                3 (metrics)
+              LOAD_ATTR               21 (descent + NULL|self)
+              CALL                     0
+              BINARY_OP               10 (-)
+              STORE_FAST               6 (y)
+
+106           LOAD_FAST                2 (painter)
+              LOAD_ATTR               23 (setPen + NULL|self)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               24 (outline_color)
+              CALL                     1
+              POP_TOP
+
+107           LOAD_GLOBAL             27 (range + NULL)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               28 (outline_width)
+              UNARY_NEGATIVE
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               28 (outline_width)
+              LOAD_CONST               3 (1)
+              BINARY_OP                0 (+)
+              CALL                     2
+              GET_ITER
+      L2:     FOR_ITER                95 (to L6)
+              STORE_FAST               7 (dx)
+
+108           LOAD_GLOBAL             27 (range + NULL)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               28 (outline_width)
+              UNARY_NEGATIVE
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               28 (outline_width)
+              LOAD_CONST               3 (1)
+              BINARY_OP                0 (+)
+              CALL                     2
+              GET_ITER
+      L3:     FOR_ITER                52 (to L5)
+              STORE_FAST               8 (dy)
+
+109           LOAD_FAST                7 (dx)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         9 (to L4)
+              LOAD_FAST                8 (dy)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L4)
+              JUMP_BACKWARD           19 (to L3)
+
+110   L4:     LOAD_FAST                2 (painter)
+              LOAD_ATTR               31 (drawText + NULL|self)
+              LOAD_FAST_LOAD_FAST     87 (x, dx)
+              BINARY_OP                0 (+)
+              LOAD_FAST_LOAD_FAST    104 (y, dy)
+              BINARY_OP                0 (+)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               32 (text)
+              CALL                     3
+              POP_TOP
+              JUMP_BACKWARD           54 (to L3)
+
+108   L5:     END_FOR
+              POP_TOP
+              JUMP_BACKWARD           97 (to L2)
+
+107   L6:     END_FOR
+              POP_TOP
+
+111           LOAD_FAST                2 (painter)
+              LOAD_ATTR               23 (setPen + NULL|self)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               34 (text_color)
+              CALL                     1
+              POP_TOP
+
+112           LOAD_FAST                2 (painter)
+              LOAD_ATTR               31 (drawText + NULL|self)
+              LOAD_FAST_LOAD_FAST     86 (x, y)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR               32 (text)
+              CALL                     3
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object FullScreenTimer at 0x000002572529A530, file "director_core\timer.py", line 115>:
+  --           MAKE_CELL                0 (__class__)
+
+ 115           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('FullScreenTimer')
+               STORE_NAME               2 (__qualname__)
+               LOAD_CONST               1 (115)
+               STORE_NAME               3 (__firstlineno__)
+
+ 116           LOAD_FAST                0 (__class__)
+               BUILD_TUPLE              1
+               LOAD_CONST               2 (<code object __init__ at 0x0000025724F92A70, file "director_core\timer.py", line 116>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__init__)
+
+ 142           LOAD_CONST               3 (<code object resizeEvent at 0x0000025726B43E10, file "director_core\timer.py", line 142>)
+               MAKE_FUNCTION
+               STORE_NAME               5 (resizeEvent)
+
+ 145           LOAD_CONST               4 (<code object update_time at 0x0000025726B94470, file "director_core\timer.py", line 145>)
+               MAKE_FUNCTION
+               STORE_NAME               6 (update_time)
+               LOAD_CONST               5 (('background', 'label'))
+               STORE_NAME               7 (__static_attributes__)
+               LOAD_FAST                0 (__class__)
+               COPY                     1
+               STORE_NAME               8 (__classcell__)
+               RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x0000025724F92A70, file "director_core\timer.py", line 116>:
+  --           COPY_FREE_VARS           1
+
+ 116           RESUME                   0
+
+ 117           LOAD_GLOBAL              0 (super)
+               LOAD_DEREF               4 (__class__)
+               LOAD_FAST                0 (self)
+               LOAD_SUPER_ATTR          5 (__init__ + NULL|self)
+               CALL                     0
+               POP_TOP
+
+ 118           LOAD_FAST                0 (self)
+               LOAD_ATTR                5 (setWindowFlag + NULL|self)
+               LOAD_GLOBAL              6 (Qt)
+               LOAD_ATTR                8 (FramelessWindowHint)
+               CALL                     1
+               POP_TOP
+
+ 119           LOAD_FAST                0 (self)
+               LOAD_ATTR               11 (setStyleSheet + NULL|self)
+               LOAD_CONST               1 ('background-color: black;')
+               CALL                     1
+               POP_TOP
+
+ 120           LOAD_FAST                0 (self)
+               LOAD_ATTR               13 (setScreen + NULL|self)
+               LOAD_FAST                1 (screen)
+               CALL                     1
+               POP_TOP
+
+ 121           LOAD_FAST                0 (self)
+               LOAD_ATTR               15 (setGeometry + NULL|self)
+               LOAD_FAST                1 (screen)
+               LOAD_ATTR               17 (geometry + NULL|self)
+               CALL                     0
+               CALL                     1
+               POP_TOP
+
+ 123           LOAD_GLOBAL             19 (QLabel + NULL)
+               LOAD_FAST                0 (self)
+               CALL                     1
+               LOAD_FAST                0 (self)
+               STORE_ATTR              10 (background)
+
+ 124           LOAD_FAST                0 (self)
+               LOAD_ATTR               20 (background)
+               LOAD_ATTR               23 (setScaledContents + NULL|self)
+               LOAD_CONST               2 (True)
+               CALL                     1
+               POP_TOP
+
+ 125           LOAD_FAST                0 (self)
+               LOAD_ATTR               20 (background)
+               LOAD_ATTR               15 (setGeometry + NULL|self)
+               LOAD_FAST                0 (self)
+               LOAD_ATTR               25 (rect + NULL|self)
+               CALL                     0
+               CALL                     1
+               POP_TOP
+
+ 126           LOAD_FAST                2 (settings)
+               LOAD_CONST               3 ('bg_path')
+               BINARY_SUBSCR
+               TO_BOOL
+               POP_JUMP_IF_FALSE       39 (to L1)
+
+ 127           LOAD_FAST                0 (self)
+               LOAD_ATTR               20 (background)
+               LOAD_ATTR               27 (setPixmap + NULL|self)
+               LOAD_GLOBAL             29 (QPixmap + NULL)
+               LOAD_FAST                2 (settings)
+               LOAD_CONST               3 ('bg_path')
+               BINARY_SUBSCR
+               CALL                     1
+               CALL                     1
+               POP_TOP
+
+ 129   L1:     LOAD_GLOBAL             31 (OutlinedLabel + NULL)
+               CALL                     0
+               LOAD_FAST                0 (self)
+               STORE_ATTR              16 (label)
+
+ 130           LOAD_GLOBAL             35 (QVBoxLayout + NULL)
+               LOAD_FAST                0 (self)
+               CALL                     1
+               STORE_FAST               3 (layout)
+
+ 131           LOAD_FAST                3 (layout)
+               LOAD_ATTR               37 (setContentsMargins + NULL|self)
+               LOAD_CONST               4 (0)
+               LOAD_CONST               4 (0)
+               LOAD_CONST               4 (0)
+               LOAD_CONST               4 (0)
+               CALL                     4
+               POP_TOP
+
+ 132           LOAD_FAST                3 (layout)
+               LOAD_ATTR               39 (addWidget + NULL|self)
+               LOAD_FAST                0 (self)
+               LOAD_ATTR               32 (label)
+               CALL                     1
+               POP_TOP
+
+ 133           LOAD_FAST                0 (self)
+               LOAD_ATTR               32 (label)
+               LOAD_ATTR               41 (set_style + NULL|self)
+
+ 134           LOAD_GLOBAL             43 (QFont + NULL)
+               LOAD_FAST                2 (settings)
+               LOAD_CONST               5 ('font')
+               BINARY_SUBSCR
+               LOAD_FAST                2 (settings)
+               LOAD_CONST               6 ('font_size')
+               BINARY_SUBSCR
+               CALL                     2
+
+ 135           LOAD_FAST                2 (settings)
+               LOAD_CONST               7 ('text_color')
+               BINARY_SUBSCR
+
+ 136           LOAD_FAST                2 (settings)
+               LOAD_CONST               8 ('outline_color')
+               BINARY_SUBSCR
+
+ 137           LOAD_FAST                2 (settings)
+               LOAD_CONST               9 ('outline_width')
+               BINARY_SUBSCR
+
+ 133           CALL                     4
+               POP_TOP
+
+ 139           LOAD_FAST                0 (self)
+               LOAD_ATTR               45 (showFullScreen + NULL|self)
+               CALL                     0
+               POP_TOP
+
+ 140           LOAD_FAST                0 (self)
+               LOAD_ATTR               15 (setGeometry + NULL|self)
+               LOAD_FAST                1 (screen)
+               LOAD_ATTR               17 (geometry + NULL|self)
+               CALL                     0
+               CALL                     1
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+Disassembly of <code object resizeEvent at 0x0000025726B43E10, file "director_core\timer.py", line 142>:
+142           RESUME                   0
+
+143           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (background)
+              LOAD_ATTR                3 (setGeometry + NULL|self)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                5 (rect + NULL|self)
+              CALL                     0
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object update_time at 0x0000025726B94470, file "director_core\timer.py", line 145>:
+145           RESUME                   0
+
+146           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (label)
+              LOAD_ATTR                3 (set_text + NULL|self)
+              LOAD_FAST                1 (text)
+              CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)

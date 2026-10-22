@@ -1,0 +1,366 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (('dataclass',))
+              IMPORT_NAME              0 (dataclasses)
+              IMPORT_FROM              1 (dataclass)
+              STORE_NAME               1 (dataclass)
+              POP_TOP
+
+  2           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (('Path',))
+              IMPORT_NAME              2 (pathlib)
+              IMPORT_FROM              3 (Path)
+              STORE_NAME               3 (Path)
+              POP_TOP
+
+  4           LOAD_CONST               3 (1)
+              LOAD_CONST               4 (('IMAGE_EXTS', 'PRESENTATION_EXTS', 'ROOT', 'VIDEO_EXTS'))
+              IMPORT_NAME              4 (paths)
+              IMPORT_FROM              5 (IMAGE_EXTS)
+              STORE_NAME               5 (IMAGE_EXTS)
+              IMPORT_FROM              6 (PRESENTATION_EXTS)
+              STORE_NAME               6 (PRESENTATION_EXTS)
+              IMPORT_FROM              7 (ROOT)
+              STORE_NAME               7 (ROOT)
+              IMPORT_FROM              8 (VIDEO_EXTS)
+              STORE_NAME               8 (VIDEO_EXTS)
+              POP_TOP
+
+  6           LOAD_CONST               5 ('director_core')
+              BUILD_SET                1
+              STORE_NAME               9 (IGNORED_PROJECT_DIRS)
+
+  9           LOAD_NAME                1 (dataclass)
+
+ 10           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               6 (<code object Project at 0x0000025726B42790, file "director_core\project_scanner.py", line 9>)
+              MAKE_FUNCTION
+              LOAD_CONST               7 ('Project')
+              CALL                     2
+
+  9           CALL                     0
+
+ 10           STORE_NAME              10 (Project)
+
+ 17           LOAD_CONST              11 ((None,))
+              LOAD_CONST               9 (<code object list_project_dirs at 0x0000025724F07D10, file "director_core\project_scanner.py", line 17>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   1 (defaults)
+              STORE_NAME              11 (list_project_dirs)
+
+ 33           LOAD_CONST              10 (<code object scan_project at 0x00000257248DD840, file "director_core\project_scanner.py", line 33>)
+              MAKE_FUNCTION
+              STORE_NAME              12 (scan_project)
+              RETURN_CONST             8 (None)
+
+Disassembly of <code object Project at 0x0000025726B42790, file "director_core\project_scanner.py", line 9>:
+  9           RESUME                   0
+              LOAD_NAME                0 (__name__)
+              STORE_NAME               1 (__module__)
+              LOAD_CONST               0 ('Project')
+              STORE_NAME               2 (__qualname__)
+              LOAD_CONST               1 (9)
+              STORE_NAME               3 (__firstlineno__)
+              SETUP_ANNOTATIONS
+
+ 11           LOAD_NAME                4 (Path)
+              LOAD_NAME                5 (__annotations__)
+              LOAD_CONST               2 ('path')
+              STORE_SUBSCR
+
+ 12           LOAD_NAME                6 (list)
+              LOAD_NAME                4 (Path)
+              BINARY_SUBSCR
+              LOAD_NAME                5 (__annotations__)
+              LOAD_CONST               3 ('presentations')
+              STORE_SUBSCR
+
+ 13           LOAD_NAME                6 (list)
+              LOAD_NAME                4 (Path)
+              BINARY_SUBSCR
+              LOAD_NAME                5 (__annotations__)
+              LOAD_CONST               4 ('images')
+              STORE_SUBSCR
+
+ 14           LOAD_NAME                6 (list)
+              LOAD_NAME                4 (Path)
+              BINARY_SUBSCR
+              LOAD_NAME                5 (__annotations__)
+              LOAD_CONST               5 ('videos')
+              STORE_SUBSCR
+              LOAD_CONST               6 (())
+              STORE_NAME               7 (__static_attributes__)
+              RETURN_CONST             7 (None)
+
+Disassembly of <code object list_project_dirs at 0x0000025724F07D10, file "director_core\project_scanner.py", line 17>:
+  17            RESUME                   0
+
+  18            LOAD_FAST                0 (base_dir)
+                TO_BOOL
+                POP_JUMP_IF_FALSE       11 (to L1)
+                LOAD_GLOBAL              1 (Path + NULL)
+                LOAD_FAST                0 (base_dir)
+                CALL                     1
+                JUMP_FORWARD             5 (to L2)
+        L1:     LOAD_GLOBAL              2 (ROOT)
+        L2:     STORE_FAST               0 (base_dir)
+
+  19            LOAD_FAST                0 (base_dir)
+                LOAD_ATTR                5 (exists + NULL|self)
+                CALL                     0
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L3)
+
+  20            BUILD_LIST               0
+                RETURN_VALUE
+
+  22    L3:     LOAD_FAST                0 (base_dir)
+                LOAD_ATTR                7 (iterdir + NULL|self)
+                CALL                     0
+                GET_ITER
+
+  21            LOAD_FAST_AND_CLEAR      1 (path)
+                SWAP                     2
+        L4:     BUILD_LIST               0
+                SWAP                     2
+
+  22            GET_ITER
+        L5:     FOR_ITER               118 (to L14)
+                STORE_FAST               1 (path)
+
+  24            LOAD_FAST                1 (path)
+                LOAD_ATTR                9 (is_dir + NULL|self)
+                CALL                     0
+                TO_BOOL
+
+  22    L6:     POP_JUMP_IF_TRUE         2 (to L7)
+                JUMP_BACKWARD           26 (to L5)
+
+  25    L7:     LOAD_FAST                1 (path)
+                LOAD_ATTR               10 (name)
+                LOAD_GLOBAL             12 (IGNORED_PROJECT_DIRS)
+                CONTAINS_OP              1
+
+  22    L8:     POP_JUMP_IF_TRUE         2 (to L9)
+                JUMP_BACKWARD           48 (to L5)
+
+  26    L9:     LOAD_FAST                1 (path)
+                LOAD_ATTR               10 (name)
+                LOAD_ATTR               15 (startswith + NULL|self)
+                LOAD_CONST               1 ('.')
+                CALL                     1
+                TO_BOOL
+
+  22   L10:     POP_JUMP_IF_FALSE        2 (to L11)
+                JUMP_BACKWARD           82 (to L5)
+
+  27   L11:     LOAD_FAST                1 (path)
+                LOAD_ATTR               10 (name)
+                LOAD_ATTR               15 (startswith + NULL|self)
+                LOAD_CONST               2 ('__')
+                CALL                     1
+                TO_BOOL
+
+  22   L12:     POP_JUMP_IF_FALSE        2 (to L13)
+                JUMP_BACKWARD          116 (to L5)
+       L13:     LOAD_FAST                1 (path)
+                LIST_APPEND              2
+                JUMP_BACKWARD          120 (to L5)
+       L14:     END_FOR
+                POP_TOP
+
+  21   L15:     STORE_FAST               2 (projects)
+                STORE_FAST               1 (path)
+
+  30            LOAD_GLOBAL             17 (sorted + NULL)
+                LOAD_FAST                2 (projects)
+                LOAD_CONST               3 (<code object <lambda> at 0x0000025725299D30, file "director_core\project_scanner.py", line 30>)
+                MAKE_FUNCTION
+                LOAD_CONST               4 (('key',))
+                CALL_KW                  2
+                RETURN_VALUE
+
+  --   L16:     SWAP                     2
+                POP_TOP
+
+  21            SWAP                     2
+                STORE_FAST               1 (path)
+                RERAISE                  0
+ExceptionTable:
+  L4 to L6 -> L16 [2]
+  L7 to L8 -> L16 [2]
+  L9 to L10 -> L16 [2]
+  L11 to L12 -> L16 [2]
+  L13 to L15 -> L16 [2]
+
+Disassembly of <code object <lambda> at 0x0000025725299D30, file "director_core\project_scanner.py", line 30>:
+ 30           RESUME                   0
+              LOAD_FAST                0 (item)
+              LOAD_ATTR                0 (name)
+              LOAD_ATTR                3 (lower + NULL|self)
+              CALL                     0
+              RETURN_VALUE
+
+Disassembly of <code object scan_project at 0x00000257248DD840, file "director_core\project_scanner.py", line 33>:
+  33            RESUME                   0
+
+  34            LOAD_GLOBAL              1 (Path + NULL)
+                LOAD_FAST                0 (project_path)
+                CALL                     1
+                STORE_FAST               0 (project_path)
+
+  35            LOAD_GLOBAL              3 (sorted + NULL)
+                LOAD_FAST                0 (project_path)
+                LOAD_ATTR                5 (iterdir + NULL|self)
+                CALL                     0
+                LOAD_CONST               1 (<code object <lambda> at 0x0000025725299E30, file "director_core\project_scanner.py", line 35>)
+                MAKE_FUNCTION
+                LOAD_CONST               2 (('key',))
+                CALL_KW                  2
+                GET_ITER
+                LOAD_FAST_AND_CLEAR      1 (path)
+                SWAP                     2
+        L1:     BUILD_LIST               0
+                SWAP                     2
+                GET_ITER
+        L2:     FOR_ITER                27 (to L5)
+                STORE_FAST_LOAD_FAST    17 (path, path)
+                LOAD_ATTR                7 (is_file + NULL|self)
+                CALL                     0
+                TO_BOOL
+        L3:     POP_JUMP_IF_TRUE         2 (to L4)
+                JUMP_BACKWARD           25 (to L2)
+        L4:     LOAD_FAST                1 (path)
+                LIST_APPEND              2
+                JUMP_BACKWARD           29 (to L2)
+        L5:     END_FOR
+                POP_TOP
+        L6:     STORE_FAST               2 (files)
+                STORE_FAST               1 (path)
+
+  36            LOAD_GLOBAL              9 (Project + NULL)
+
+  37            LOAD_FAST                0 (project_path)
+
+  38            LOAD_FAST                2 (files)
+                GET_ITER
+                LOAD_FAST_AND_CLEAR      1 (path)
+                SWAP                     2
+        L7:     BUILD_LIST               0
+                SWAP                     2
+                GET_ITER
+        L8:     FOR_ITER                40 (to L11)
+                STORE_FAST_LOAD_FAST    17 (path, path)
+                LOAD_ATTR               10 (suffix)
+                LOAD_ATTR               13 (lower + NULL|self)
+                CALL                     0
+                LOAD_GLOBAL             14 (PRESENTATION_EXTS)
+                CONTAINS_OP              0
+        L9:     POP_JUMP_IF_TRUE         2 (to L10)
+                JUMP_BACKWARD           38 (to L8)
+       L10:     LOAD_FAST                1 (path)
+                LIST_APPEND              2
+                JUMP_BACKWARD           42 (to L8)
+       L11:     END_FOR
+                POP_TOP
+       L12:     SWAP                     2
+                STORE_FAST               1 (path)
+
+  39            LOAD_FAST                2 (files)
+                GET_ITER
+                LOAD_FAST_AND_CLEAR      1 (path)
+                SWAP                     2
+       L13:     BUILD_LIST               0
+                SWAP                     2
+                GET_ITER
+       L14:     FOR_ITER                40 (to L17)
+                STORE_FAST_LOAD_FAST    17 (path, path)
+                LOAD_ATTR               10 (suffix)
+                LOAD_ATTR               13 (lower + NULL|self)
+                CALL                     0
+                LOAD_GLOBAL             16 (IMAGE_EXTS)
+                CONTAINS_OP              0
+       L15:     POP_JUMP_IF_TRUE         2 (to L16)
+                JUMP_BACKWARD           38 (to L14)
+       L16:     LOAD_FAST                1 (path)
+                LIST_APPEND              2
+                JUMP_BACKWARD           42 (to L14)
+       L17:     END_FOR
+                POP_TOP
+       L18:     SWAP                     2
+                STORE_FAST               1 (path)
+
+  40            LOAD_FAST                2 (files)
+                GET_ITER
+                LOAD_FAST_AND_CLEAR      1 (path)
+                SWAP                     2
+       L19:     BUILD_LIST               0
+                SWAP                     2
+                GET_ITER
+       L20:     FOR_ITER                40 (to L23)
+                STORE_FAST_LOAD_FAST    17 (path, path)
+                LOAD_ATTR               10 (suffix)
+                LOAD_ATTR               13 (lower + NULL|self)
+                CALL                     0
+                LOAD_GLOBAL             18 (VIDEO_EXTS)
+                CONTAINS_OP              0
+       L21:     POP_JUMP_IF_TRUE         2 (to L22)
+                JUMP_BACKWARD           38 (to L20)
+       L22:     LOAD_FAST                1 (path)
+                LIST_APPEND              2
+                JUMP_BACKWARD           42 (to L20)
+       L23:     END_FOR
+                POP_TOP
+       L24:     SWAP                     2
+                STORE_FAST               1 (path)
+
+  36            LOAD_CONST               3 (('path', 'presentations', 'images', 'videos'))
+                CALL_KW                  4
+                RETURN_VALUE
+
+  --   L25:     SWAP                     2
+                POP_TOP
+
+  35            SWAP                     2
+                STORE_FAST               1 (path)
+                RERAISE                  0
+
+  --   L26:     SWAP                     2
+                POP_TOP
+
+  38            SWAP                     2
+                STORE_FAST               1 (path)
+                RERAISE                  0
+
+  --   L27:     SWAP                     2
+                POP_TOP
+
+  39            SWAP                     2
+                STORE_FAST               1 (path)
+                RERAISE                  0
+
+  --   L28:     SWAP                     2
+                POP_TOP
+
+  40            SWAP                     2
+                STORE_FAST               1 (path)
+                RERAISE                  0
+ExceptionTable:
+  L1 to L3 -> L25 [2]
+  L4 to L6 -> L25 [2]
+  L7 to L9 -> L26 [5]
+  L10 to L12 -> L26 [5]
+  L13 to L15 -> L27 [6]
+  L16 to L18 -> L27 [6]
+  L19 to L21 -> L28 [7]
+  L22 to L24 -> L28 [7]
+
+Disassembly of <code object <lambda> at 0x0000025725299E30, file "director_core\project_scanner.py", line 35>:
+ 35           RESUME                   0
+              LOAD_FAST                0 (item)
+              LOAD_ATTR                0 (name)
+              LOAD_ATTR                3 (lower + NULL|self)
+              CALL                     0
+              RETURN_VALUE

@@ -1,0 +1,224 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (('Qt',))
+              IMPORT_NAME              0 (PySide6.QtCore)
+              IMPORT_FROM              1 (Qt)
+              STORE_NAME               1 (Qt)
+              POP_TOP
+
+  2           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (('QPixmap',))
+              IMPORT_NAME              2 (PySide6.QtGui)
+              IMPORT_FROM              3 (QPixmap)
+              STORE_NAME               3 (QPixmap)
+              POP_TOP
+
+  3           LOAD_CONST               0 (0)
+              LOAD_CONST               3 (('QLabel', 'QWidget'))
+              IMPORT_NAME              4 (PySide6.QtWidgets)
+              IMPORT_FROM              5 (QLabel)
+              STORE_NAME               5 (QLabel)
+              IMPORT_FROM              6 (QWidget)
+              STORE_NAME               6 (QWidget)
+              POP_TOP
+
+  6           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               4 (<code object FullScreenImage at 0x000002572523B990, file "director_core\image_show.py", line 6>)
+              MAKE_FUNCTION
+              LOAD_CONST               5 ('FullScreenImage')
+              LOAD_NAME                6 (QWidget)
+              CALL                     3
+              STORE_NAME               7 (FullScreenImage)
+              RETURN_CONST             6 (None)
+
+Disassembly of <code object FullScreenImage at 0x000002572523B990, file "director_core\image_show.py", line 6>:
+  --           MAKE_CELL                0 (__class__)
+
+   6           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('FullScreenImage')
+               STORE_NAME               2 (__qualname__)
+               LOAD_CONST               1 (6)
+               STORE_NAME               3 (__firstlineno__)
+
+   7           LOAD_FAST                0 (__class__)
+               BUILD_TUPLE              1
+               LOAD_CONST               2 (<code object __init__ at 0x0000025724E30620, file "director_core\image_show.py", line 7>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__init__)
+
+  20           LOAD_CONST               3 (<code object show_image at 0x000002572523B880, file "director_core\image_show.py", line 20>)
+               MAKE_FUNCTION
+               STORE_NAME               5 (show_image)
+
+  24           LOAD_CONST               4 (<code object resizeEvent at 0x00000257252ECB70, file "director_core\image_show.py", line 24>)
+               MAKE_FUNCTION
+               STORE_NAME               6 (resizeEvent)
+
+  28           LOAD_CONST               5 (<code object repaint_image at 0x0000025724AA9260, file "director_core\image_show.py", line 28>)
+               MAKE_FUNCTION
+               STORE_NAME               7 (repaint_image)
+               LOAD_CONST               6 (('label', 'pixmap'))
+               STORE_NAME               8 (__static_attributes__)
+               LOAD_FAST                0 (__class__)
+               COPY                     1
+               STORE_NAME               9 (__classcell__)
+               RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x0000025724E30620, file "director_core\image_show.py", line 7>:
+  --           COPY_FREE_VARS           1
+
+   7           RESUME                   0
+
+   8           LOAD_GLOBAL              0 (super)
+               LOAD_DEREF               2 (__class__)
+               LOAD_FAST                0 (self)
+               LOAD_SUPER_ATTR          5 (__init__ + NULL|self)
+               CALL                     0
+               POP_TOP
+
+   9           LOAD_FAST                0 (self)
+               LOAD_ATTR                5 (setWindowFlag + NULL|self)
+               LOAD_GLOBAL              6 (Qt)
+               LOAD_ATTR                8 (FramelessWindowHint)
+               CALL                     1
+               POP_TOP
+
+  10           LOAD_FAST                0 (self)
+               LOAD_ATTR               11 (setStyleSheet + NULL|self)
+               LOAD_CONST               1 ('background-color: black;')
+               CALL                     1
+               POP_TOP
+
+  11           LOAD_FAST                0 (self)
+               LOAD_ATTR               13 (setScreen + NULL|self)
+               LOAD_FAST                1 (screen)
+               CALL                     1
+               POP_TOP
+
+  12           LOAD_FAST                0 (self)
+               LOAD_ATTR               15 (setGeometry + NULL|self)
+               LOAD_FAST                1 (screen)
+               LOAD_ATTR               17 (geometry + NULL|self)
+               CALL                     0
+               CALL                     1
+               POP_TOP
+
+  13           LOAD_GLOBAL             19 (QLabel + NULL)
+               LOAD_FAST                0 (self)
+               CALL                     1
+               LOAD_FAST                0 (self)
+               STORE_ATTR              10 (label)
+
+  14           LOAD_FAST                0 (self)
+               LOAD_ATTR               20 (label)
+               LOAD_ATTR               23 (setAlignment + NULL|self)
+               LOAD_GLOBAL              6 (Qt)
+               LOAD_ATTR               24 (AlignCenter)
+               CALL                     1
+               POP_TOP
+
+  15           LOAD_FAST                0 (self)
+               LOAD_ATTR               20 (label)
+               LOAD_ATTR               15 (setGeometry + NULL|self)
+               LOAD_FAST                0 (self)
+               LOAD_ATTR               27 (rect + NULL|self)
+               CALL                     0
+               CALL                     1
+               POP_TOP
+
+  16           LOAD_GLOBAL             29 (QPixmap + NULL)
+               CALL                     0
+               LOAD_FAST                0 (self)
+               STORE_ATTR              15 (pixmap)
+
+  17           LOAD_FAST                0 (self)
+               LOAD_ATTR               33 (showFullScreen + NULL|self)
+               CALL                     0
+               POP_TOP
+
+  18           LOAD_FAST                0 (self)
+               LOAD_ATTR               15 (setGeometry + NULL|self)
+               LOAD_FAST                1 (screen)
+               LOAD_ATTR               17 (geometry + NULL|self)
+               CALL                     0
+               CALL                     1
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+Disassembly of <code object show_image at 0x000002572523B880, file "director_core\image_show.py", line 20>:
+ 20           RESUME                   0
+
+ 21           LOAD_GLOBAL              1 (QPixmap + NULL)
+              LOAD_FAST                1 (path)
+              CALL                     1
+              LOAD_FAST                0 (self)
+              STORE_ATTR               1 (pixmap)
+
+ 22           LOAD_FAST                0 (self)
+              LOAD_ATTR                5 (repaint_image + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object resizeEvent at 0x00000257252ECB70, file "director_core\image_show.py", line 24>:
+ 24           RESUME                   0
+
+ 25           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (label)
+              LOAD_ATTR                3 (setGeometry + NULL|self)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                5 (rect + NULL|self)
+              CALL                     0
+              CALL                     1
+              POP_TOP
+
+ 26           LOAD_FAST                0 (self)
+              LOAD_ATTR                7 (repaint_image + NULL|self)
+              CALL                     0
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object repaint_image at 0x0000025724AA9260, file "director_core\image_show.py", line 28>:
+ 28           RESUME                   0
+
+ 29           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (pixmap)
+              LOAD_ATTR                3 (isNull + NULL|self)
+              CALL                     0
+              TO_BOOL
+              POP_JUMP_IF_TRUE        30 (to L1)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                4 (label)
+              LOAD_ATTR                7 (width + NULL|self)
+              CALL                     0
+              LOAD_CONST               1 (0)
+              COMPARE_OP              58 (bool(<=))
+              POP_JUMP_IF_FALSE        1 (to L2)
+
+ 30   L1:     RETURN_CONST             0 (None)
+
+ 31   L2:     LOAD_FAST                0 (self)
+              LOAD_ATTR                4 (label)
+              LOAD_ATTR                9 (setPixmap + NULL|self)
+
+ 32           LOAD_FAST                0 (self)
+              LOAD_ATTR                0 (pixmap)
+              LOAD_ATTR               11 (scaled + NULL|self)
+              LOAD_FAST                0 (self)
+              LOAD_ATTR                4 (label)
+              LOAD_ATTR               13 (size + NULL|self)
+              CALL                     0
+              LOAD_GLOBAL             14 (Qt)
+              LOAD_ATTR               16 (KeepAspectRatio)
+              LOAD_GLOBAL             14 (Qt)
+              LOAD_ATTR               18 (SmoothTransformation)
+              CALL                     3
+
+ 31           CALL                     1
+              POP_TOP
+              RETURN_CONST             0 (None)

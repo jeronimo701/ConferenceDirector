@@ -1,0 +1,266 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              0 (ctypes)
+              STORE_NAME               0 (ctypes)
+
+  2           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              1 (os)
+              STORE_NAME               1 (os)
+
+  3           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              2 (subprocess)
+              STORE_NAME               2 (subprocess)
+
+  4           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (('Path',))
+              IMPORT_NAME              3 (pathlib)
+              IMPORT_FROM              4 (Path)
+              STORE_NAME               4 (Path)
+              POP_TOP
+
+  6           LOAD_CONST               0 (0)
+              LOAD_CONST               3 (('QApplication',))
+              IMPORT_NAME              5 (PySide6.QtWidgets)
+              IMPORT_FROM              6 (QApplication)
+              STORE_NAME               6 (QApplication)
+              POP_TOP
+
+  9           LOAD_CONST               4 (<code object screen_title at 0x0000025724D57CF0, file "director_core\screens.py", line 9>)
+              MAKE_FUNCTION
+              STORE_NAME               7 (screen_title)
+
+ 17           LOAD_CONST               5 (<code object app_screens at 0x000002572529A030, file "director_core\screens.py", line 17>)
+              MAKE_FUNCTION
+              STORE_NAME               8 (app_screens)
+
+ 21           LOAD_CONST               6 (<code object screen_index_of_widget at 0x0000025725211A70, file "director_core\screens.py", line 21>)
+              MAKE_FUNCTION
+              STORE_NAME               9 (screen_index_of_widget)
+
+ 30           LOAD_CONST               7 (<code object move_widget_to_screen at 0x00000257248D11A0, file "director_core\screens.py", line 30>)
+              MAKE_FUNCTION
+              STORE_NAME              10 (move_widget_to_screen)
+
+ 39           LOAD_CONST               8 (<code object display_switch at 0x00000257252895F0, file "director_core\screens.py", line 39>)
+              MAKE_FUNCTION
+              STORE_NAME              11 (display_switch)
+              RETURN_CONST             1 (None)
+
+Disassembly of <code object screen_title at 0x0000025724D57CF0, file "director_core\screens.py", line 9>:
+  9           RESUME                   0
+
+ 10           LOAD_FAST                0 (screen)
+              LOAD_ATTR                1 (geometry + NULL|self)
+              CALL                     0
+              STORE_FAST               2 (geometry)
+
+ 12           LOAD_CONST               1 ('Монитор ')
+              LOAD_FAST                1 (index)
+              LOAD_CONST               2 (1)
+              BINARY_OP                0 (+)
+              FORMAT_SIMPLE
+              LOAD_CONST               3 (': ')
+              LOAD_FAST                0 (screen)
+              LOAD_ATTR                3 (name + NULL|self)
+              CALL                     0
+              FORMAT_SIMPLE
+              LOAD_CONST               4 (' (')
+
+ 13           LOAD_FAST                2 (geometry)
+              LOAD_ATTR                5 (width + NULL|self)
+              CALL                     0
+              FORMAT_SIMPLE
+              LOAD_CONST               5 ('x')
+              LOAD_FAST                2 (geometry)
+              LOAD_ATTR                7 (height + NULL|self)
+              CALL                     0
+              FORMAT_SIMPLE
+              LOAD_CONST               6 (' @ ')
+              LOAD_FAST                2 (geometry)
+              LOAD_ATTR                9 (x + NULL|self)
+              CALL                     0
+              FORMAT_SIMPLE
+              LOAD_CONST               7 (',')
+              LOAD_FAST                2 (geometry)
+              LOAD_ATTR               11 (y + NULL|self)
+              CALL                     0
+              FORMAT_SIMPLE
+              LOAD_CONST               8 (')')
+
+ 12           BUILD_STRING            13
+
+ 11           RETURN_VALUE
+
+Disassembly of <code object app_screens at 0x000002572529A030, file "director_core\screens.py", line 17>:
+ 17           RESUME                   0
+
+ 18           LOAD_GLOBAL              0 (QApplication)
+              LOAD_ATTR                2 (screens)
+              PUSH_NULL
+              CALL                     0
+              RETURN_VALUE
+
+Disassembly of <code object screen_index_of_widget at 0x0000025725211A70, file "director_core\screens.py", line 21>:
+ 21           RESUME                   0
+
+ 22           LOAD_FAST                0 (widget)
+              LOAD_ATTR                1 (windowHandle + NULL|self)
+              CALL                     0
+              STORE_FAST               1 (handle)
+
+ 23           LOAD_FAST                1 (handle)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       16 (to L1)
+              LOAD_FAST                1 (handle)
+              LOAD_ATTR                3 (screen + NULL|self)
+              CALL                     0
+              JUMP_FORWARD            49 (to L2)
+      L1:     LOAD_GLOBAL              4 (QApplication)
+              LOAD_ATTR                6 (screenAt)
+              PUSH_NULL
+              LOAD_FAST                0 (widget)
+              LOAD_ATTR                9 (frameGeometry + NULL|self)
+              CALL                     0
+              LOAD_ATTR               11 (center + NULL|self)
+              CALL                     0
+              CALL                     1
+      L2:     STORE_FAST               2 (screen)
+
+ 24           LOAD_GLOBAL             13 (app_screens + NULL)
+              CALL                     0
+              STORE_FAST               3 (screens)
+
+ 25           LOAD_FAST_LOAD_FAST     35 (screen, screens)
+              CONTAINS_OP              0
+              POP_JUMP_IF_FALSE       17 (to L3)
+
+ 26           LOAD_FAST                3 (screens)
+              LOAD_ATTR               15 (index + NULL|self)
+              LOAD_FAST                2 (screen)
+              CALL                     1
+              RETURN_VALUE
+
+ 27   L3:     RETURN_CONST             1 (0)
+
+Disassembly of <code object move_widget_to_screen at 0x00000257248D11A0, file "director_core\screens.py", line 30>:
+ 30           RESUME                   0
+
+ 31           LOAD_FAST                1 (screen)
+              LOAD_ATTR                1 (availableGeometry + NULL|self)
+              CALL                     0
+              STORE_FAST               2 (geometry)
+
+ 32           LOAD_FAST                0 (widget)
+              LOAD_ATTR                3 (size + NULL|self)
+              CALL                     0
+              STORE_FAST               3 (size)
+
+ 33           LOAD_FAST                2 (geometry)
+              LOAD_ATTR                5 (x + NULL|self)
+              CALL                     0
+              LOAD_GLOBAL              7 (max + NULL)
+              LOAD_CONST               1 (0)
+              LOAD_FAST                2 (geometry)
+              LOAD_ATTR                9 (width + NULL|self)
+              CALL                     0
+              LOAD_FAST                3 (size)
+              LOAD_ATTR                9 (width + NULL|self)
+              CALL                     0
+              BINARY_OP               10 (-)
+              LOAD_CONST               2 (2)
+              BINARY_OP                2 (//)
+              CALL                     2
+              BINARY_OP                0 (+)
+              STORE_FAST               4 (x)
+
+ 34           LOAD_FAST                2 (geometry)
+              LOAD_ATTR               11 (y + NULL|self)
+              CALL                     0
+              LOAD_GLOBAL              7 (max + NULL)
+              LOAD_CONST               1 (0)
+              LOAD_FAST                2 (geometry)
+              LOAD_ATTR               13 (height + NULL|self)
+              CALL                     0
+              LOAD_FAST                3 (size)
+              LOAD_ATTR               13 (height + NULL|self)
+              CALL                     0
+              BINARY_OP               10 (-)
+              LOAD_CONST               2 (2)
+              BINARY_OP                2 (//)
+              CALL                     2
+              BINARY_OP                0 (+)
+              STORE_FAST               5 (y)
+
+ 35           LOAD_FAST                0 (widget)
+              LOAD_ATTR               15 (windowHandle + NULL|self)
+              CALL                     0
+              LOAD_ATTR               17 (setScreen + NULL|self)
+              LOAD_FAST                1 (screen)
+              CALL                     1
+              POP_TOP
+
+ 36           LOAD_FAST                0 (widget)
+              LOAD_ATTR               19 (move + NULL|self)
+              LOAD_FAST_LOAD_FAST     69 (x, y)
+              CALL                     2
+              POP_TOP
+              RETURN_CONST             0 (None)
+
+Disassembly of <code object display_switch at 0x00000257252895F0, file "director_core\screens.py", line 39>:
+ 39           RESUME                   0
+
+ 40           LOAD_GLOBAL              1 (Path + NULL)
+              LOAD_GLOBAL              2 (os)
+              LOAD_ATTR                4 (environ)
+              LOAD_ATTR                7 (get + NULL|self)
+              LOAD_CONST               1 ('SystemRoot')
+              LOAD_CONST               2 ('C:\\Windows')
+              CALL                     2
+              CALL                     1
+              LOAD_CONST               3 ('System32')
+              BINARY_OP               11 (/)
+              LOAD_CONST               4 ('DisplaySwitch.exe')
+              BINARY_OP               11 (/)
+              STORE_FAST               1 (exe)
+
+ 41           LOAD_GLOBAL              8 (ctypes)
+              LOAD_ATTR               10 (windll)
+              LOAD_ATTR               12 (shell32)
+              LOAD_ATTR               15 (ShellExecuteW + NULL|self)
+
+ 42           LOAD_CONST               0 (None)
+
+ 43           LOAD_CONST               5 ('runas')
+
+ 44           LOAD_GLOBAL             17 (str + NULL)
+              LOAD_FAST                1 (exe)
+              CALL                     1
+
+ 45           LOAD_FAST                0 (mode)
+
+ 46           LOAD_CONST               0 (None)
+
+ 47           LOAD_CONST               6 (1)
+
+ 41           CALL                     6
+              STORE_FAST               2 (result)
+
+ 49           LOAD_FAST                2 (result)
+              LOAD_CONST               7 (32)
+              COMPARE_OP              58 (bool(<=))
+              POP_JUMP_IF_FALSE       14 (to L1)
+
+ 50           LOAD_GLOBAL             19 (OSError + NULL)
+              LOAD_CONST               8 ('DisplaySwitch failed with ShellExecute code ')
+              LOAD_FAST                2 (result)
+              FORMAT_SIMPLE
+              BUILD_STRING             2
+              CALL                     1
+              RAISE_VARARGS            1
+
+ 51   L1:     LOAD_FAST                2 (result)
+              RETURN_VALUE

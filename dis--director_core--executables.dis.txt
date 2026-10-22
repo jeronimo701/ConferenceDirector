@@ -1,0 +1,261 @@
+  0           RESUME                   0
+
+  1           LOAD_CONST               0 (0)
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              0 (os)
+              STORE_NAME               0 (os)
+
+  2           LOAD_CONST               0 (0)
+              LOAD_CONST               2 (('Path',))
+              IMPORT_NAME              1 (pathlib)
+              IMPORT_FROM              2 (Path)
+              STORE_NAME               2 (Path)
+              POP_TOP
+
+  3           LOAD_CONST               0 (0)
+              LOAD_CONST               3 (('which',))
+              IMPORT_NAME              3 (shutil)
+              IMPORT_FROM              4 (which)
+              STORE_NAME               4 (which)
+              POP_TOP
+
+  6           LOAD_CONST               7 (((),))
+              LOAD_CONST               4 (<code object existing_exe at 0x0000025724E06730, file "director_core\executables.py", line 6>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE   1 (defaults)
+              STORE_NAME               5 (existing_exe)
+
+ 21           LOAD_CONST               5 (<code object edge_extra_paths at 0x00000257252118B0, file "director_core\executables.py", line 21>)
+              MAKE_FUNCTION
+              STORE_NAME               6 (edge_extra_paths)
+
+ 27           LOAD_CONST               6 (<code object powerpoint_extra_paths at 0x0000025724E05850, file "director_core\executables.py", line 27>)
+              MAKE_FUNCTION
+              STORE_NAME               7 (powerpoint_extra_paths)
+              RETURN_CONST             1 (None)
+
+Disassembly of <code object existing_exe at 0x0000025724E06730, file "director_core\executables.py", line 6>:
+  6           RESUME                   0
+
+  7           BUILD_LIST               0
+              STORE_FAST               3 (candidates)
+
+  8           LOAD_FAST                0 (configured_path)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       26 (to L1)
+
+  9           LOAD_FAST                3 (candidates)
+              LOAD_ATTR                1 (append + NULL|self)
+              LOAD_GLOBAL              3 (Path + NULL)
+              LOAD_FAST                0 (configured_path)
+              CALL                     1
+              CALL                     1
+              POP_TOP
+
+ 10   L1:     LOAD_FAST                1 (exe_names)
+              GET_ITER
+      L2:     FOR_ITER                49 (to L4)
+              STORE_FAST               4 (name)
+
+ 11           LOAD_GLOBAL              5 (which + NULL)
+              LOAD_FAST                4 (name)
+              CALL                     1
+              STORE_FAST               5 (found)
+
+ 12           LOAD_FAST                5 (found)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L3)
+              JUMP_BACKWARD           23 (to L2)
+
+ 13   L3:     LOAD_FAST                3 (candidates)
+              LOAD_ATTR                1 (append + NULL|self)
+              LOAD_GLOBAL              3 (Path + NULL)
+              LOAD_FAST                5 (found)
+              CALL                     1
+              CALL                     1
+              POP_TOP
+              JUMP_BACKWARD           51 (to L2)
+
+ 10   L4:     END_FOR
+              POP_TOP
+
+ 14           LOAD_FAST                3 (candidates)
+              LOAD_ATTR                7 (extend + NULL|self)
+              LOAD_CONST               1 (<code object <genexpr> at 0x0000025725299830, file "director_core\executables.py", line 14>)
+              MAKE_FUNCTION
+              LOAD_FAST                2 (extra_paths)
+              GET_ITER
+              CALL                     0
+              CALL                     1
+              POP_TOP
+
+ 15           LOAD_FAST                3 (candidates)
+              GET_ITER
+      L5:     FOR_ITER                37 (to L7)
+              STORE_FAST               6 (candidate)
+
+ 16           LOAD_FAST                6 (candidate)
+              LOAD_ATTR                9 (exists + NULL|self)
+              CALL                     0
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L6)
+              JUMP_BACKWARD           26 (to L5)
+
+ 17   L6:     LOAD_GLOBAL             11 (str + NULL)
+              LOAD_FAST                6 (candidate)
+              CALL                     1
+              SWAP                     2
+              POP_TOP
+              RETURN_VALUE
+
+ 15   L7:     END_FOR
+              POP_TOP
+
+ 18           LOAD_FAST                1 (exe_names)
+              LOAD_CONST               2 (0)
+              BINARY_SUBSCR
+              RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x0000025725299830, file "director_core\executables.py", line 14>:
+  14           RETURN_GENERATOR
+               POP_TOP
+       L1:     RESUME                   0
+               LOAD_FAST                0 (.0)
+               GET_ITER
+       L2:     FOR_ITER                16 (to L3)
+               STORE_FAST               1 (path)
+               LOAD_GLOBAL              1 (Path + NULL)
+               LOAD_FAST                1 (path)
+               CALL                     1
+               YIELD_VALUE              0
+               RESUME                   5
+               POP_TOP
+               JUMP_BACKWARD           18 (to L2)
+       L3:     END_FOR
+               POP_TOP
+               RETURN_CONST             0 (None)
+
+  --   L4:     CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+               RERAISE                  1
+ExceptionTable:
+  L1 to L4 -> L4 [0] lasti
+
+Disassembly of <code object edge_extra_paths at 0x00000257252118B0, file "director_core\executables.py", line 21>:
+  21           RESUME                   0
+
+  22           LOAD_CONST               1 (('Microsoft/Edge/Application/msedge.exe', 'Microsoft/Edge Beta/Application/msedge.exe'))
+               STORE_FAST               0 (names)
+
+  23           LOAD_GLOBAL              0 (os)
+               LOAD_ATTR                2 (environ)
+               LOAD_ATTR                5 (get + NULL|self)
+               LOAD_CONST               2 ('ProgramFiles')
+               CALL                     1
+               LOAD_GLOBAL              0 (os)
+               LOAD_ATTR                2 (environ)
+               LOAD_ATTR                5 (get + NULL|self)
+               LOAD_CONST               3 ('ProgramFiles(x86)')
+               CALL                     1
+               BUILD_TUPLE              2
+               STORE_FAST               1 (bases)
+
+  24           LOAD_FAST                1 (bases)
+               GET_ITER
+               LOAD_FAST_AND_CLEAR      2 (base)
+               LOAD_FAST_AND_CLEAR      3 (name)
+               SWAP                     3
+       L1:     BUILD_LIST               0
+               SWAP                     2
+               GET_ITER
+       L2:     FOR_ITER                35 (to L7)
+               STORE_FAST_LOAD_FAST    34 (base, base)
+               TO_BOOL
+       L3:     POP_JUMP_IF_TRUE         2 (to L4)
+               JUMP_BACKWARD           11 (to L2)
+       L4:     LOAD_FAST                0 (names)
+               GET_ITER
+               GET_ITER
+       L5:     FOR_ITER                17 (to L6)
+               STORE_FAST               3 (name)
+               LOAD_GLOBAL              7 (Path + NULL)
+               LOAD_FAST                2 (base)
+               CALL                     1
+               LOAD_FAST                3 (name)
+               BINARY_OP               11 (/)
+               LIST_APPEND              3
+               JUMP_BACKWARD           19 (to L5)
+       L6:     END_FOR
+               POP_TOP
+               JUMP_BACKWARD           37 (to L2)
+       L7:     END_FOR
+               POP_TOP
+       L8:     SWAP                     3
+               STORE_FAST               3 (name)
+               STORE_FAST               2 (base)
+               RETURN_VALUE
+
+  --   L9:     SWAP                     2
+               POP_TOP
+
+  24           SWAP                     3
+               STORE_FAST               3 (name)
+               STORE_FAST               2 (base)
+               RERAISE                  0
+ExceptionTable:
+  L1 to L3 -> L9 [3]
+  L4 to L8 -> L9 [3]
+
+Disassembly of <code object powerpoint_extra_paths at 0x0000025724E05850, file "director_core\executables.py", line 27>:
+ 27           RESUME                   0
+
+ 28           BUILD_LIST               0
+              STORE_FAST               0 (roots)
+
+ 29           LOAD_GLOBAL              0 (os)
+              LOAD_ATTR                2 (environ)
+              LOAD_ATTR                5 (get + NULL|self)
+              LOAD_CONST               1 ('ProgramFiles')
+              CALL                     1
+              LOAD_GLOBAL              0 (os)
+              LOAD_ATTR                2 (environ)
+              LOAD_ATTR                5 (get + NULL|self)
+              LOAD_CONST               2 ('ProgramFiles(x86)')
+              CALL                     1
+              BUILD_TUPLE              2
+              GET_ITER
+      L1:     FOR_ITER                94 (to L3)
+              STORE_FAST               1 (base)
+
+ 30           LOAD_FAST                1 (base)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L2)
+              JUMP_BACKWARD           12 (to L1)
+
+ 31   L2:     LOAD_FAST                0 (roots)
+              LOAD_ATTR                7 (extend + NULL|self)
+              LOAD_GLOBAL              9 (Path + NULL)
+              LOAD_FAST                1 (base)
+              CALL                     1
+              LOAD_ATTR               11 (glob + NULL|self)
+              LOAD_CONST               3 ('Microsoft Office/root/Office*/POWERPNT.EXE')
+              CALL                     1
+              CALL                     1
+              POP_TOP
+
+ 32           LOAD_FAST                0 (roots)
+              LOAD_ATTR                7 (extend + NULL|self)
+              LOAD_GLOBAL              9 (Path + NULL)
+              LOAD_FAST                1 (base)
+              CALL                     1
+              LOAD_ATTR               11 (glob + NULL|self)
+              LOAD_CONST               4 ('Microsoft Office/Office*/POWERPNT.EXE')
+              CALL                     1
+              CALL                     1
+              POP_TOP
+              JUMP_BACKWARD           96 (to L1)
+
+ 29   L3:     END_FOR
+              POP_TOP
+
+ 33           LOAD_FAST                0 (roots)
+              RETURN_VALUE

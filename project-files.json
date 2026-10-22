@@ -1,0 +1,266 @@
+{
+  "files": [
+    {
+      "gist_file": "src--build.ps1",
+      "project_path": "source/build.ps1",
+      "sha256": "b4866f1453ef9411abd5b3308e0cd371d824a5a10a989fd59746abcfb8a6d765"
+    },
+    {
+      "gist_file": "src--conference_director.py",
+      "project_path": "source/conference_director.py",
+      "sha256": "41855c6f41a664dea0c550b3050fcab8ba6aba62e16ff40906fd1135a96feb6a"
+    },
+    {
+      "gist_file": "src--ConferenceDirector.spec",
+      "project_path": "source/ConferenceDirector.spec",
+      "sha256": "954bbe97c3ab252c6dff42eec02f266db770f9546c620493eebea6d29c5f0280"
+    },
+    {
+      "gist_file": "src--director_core--__init__.py",
+      "project_path": "source/director_core/__init__.py",
+      "sha256": "04336dc69c854135cf84af2e725f759e507777a369bdb85f3088f9285875576c"
+    },
+    {
+      "gist_file": "src--director_core--app.py",
+      "project_path": "source/director_core/app.py",
+      "sha256": "54b2d1dc47b2ff9e0c05eaa06137878fc026e10d0199acb426994165e7c50b4a"
+    },
+    {
+      "gist_file": "src--director_core--executables.py",
+      "project_path": "source/director_core/executables.py",
+      "sha256": "f39333899e394ac3e561e84755d4385ebfb0b56ca00e08c735b74e4f5929612d"
+    },
+    {
+      "gist_file": "src--director_core--image_show.py",
+      "project_path": "source/director_core/image_show.py",
+      "sha256": "ffec68e518c8046261d192ee1fe04d62de560e83f3ca06c80518b4fb542b33da"
+    },
+    {
+      "gist_file": "src--director_core--paths.py",
+      "project_path": "source/director_core/paths.py",
+      "sha256": "7f7309ef3161fd3700324bfab4bbdc388066356dd03ebe5484f2256f52c91edb"
+    },
+    {
+      "gist_file": "src--director_core--process_manager.py",
+      "project_path": "source/director_core/process_manager.py",
+      "sha256": "9a13e68c7c245c853faf52a41185a54e5108c85ce1481a00d53d877beaaeb9af"
+    },
+    {
+      "gist_file": "src--director_core--project_scanner.py",
+      "project_path": "source/director_core/project_scanner.py",
+      "sha256": "7ccd26f5a64371aa88f6a21a5f10dd755fe9be39019752be877b415e3a09ea67"
+    },
+    {
+      "gist_file": "src--director_core--screens.py",
+      "project_path": "source/director_core/screens.py",
+      "sha256": "8e875dc670042149d6d37123dcc3dc9ddb62057b0c075e25c5a354144d97445f"
+    },
+    {
+      "gist_file": "src--director_core--settings.py",
+      "project_path": "source/director_core/settings.py",
+      "sha256": "6608f9d48867851b0687f650d10871b00931c2a6b53a8b3c61b93d08bac2a3d2"
+    },
+    {
+      "gist_file": "src--director_core--telegram_connect_dialog.py",
+      "project_path": "source/director_core/telegram_connect_dialog.py",
+      "sha256": "a031bfb2466ad4691412b798f0497d2e957cf8d3fa09dabc97fefb624972b961"
+    },
+    {
+      "gist_file": "src--director_core--telegram_receiver.py",
+      "project_path": "source/director_core/telegram_receiver.py",
+      "sha256": "8abe2dec506ae3db8ea15ce65050b8acd17c8a44d795c9cfc3b916bb3954d7d5"
+    },
+    {
+      "gist_file": "src--director_core--timer.py",
+      "project_path": "source/director_core/timer.py",
+      "sha256": "d7488bfc5216646c3cb4ac9c49ab81c290444035df466b505b15308b333ecaca"
+    },
+    {
+      "gist_file": "src--requirements-build.txt",
+      "project_path": "source/requirements-build.txt",
+      "sha256": "ce33f6dd122c28d24cfc886a8299f92dae3563ba726cd320bc3cfb59974bd181"
+    },
+    {
+      "gist_file": "src--requirements.txt",
+      "project_path": "source/requirements.txt",
+      "sha256": "cd0d4972b59e7e9880c4fa76a3c900d66162cc14b8bc1adbd07af0ebe2897325"
+    },
+    {
+      "gist_file": "pyc--conference_director.pyc",
+      "project_path": "original-bytecode/conference_director.pyc",
+      "sha256": "33fada2eec6a92ab86293eeb247e54edb0a6d04fec3986c2dca1ed8134a1433c"
+    },
+    {
+      "gist_file": "pyc--director_core--__init__.pyc",
+      "project_path": "original-bytecode/director_core/__init__.pyc",
+      "sha256": "e17f1a65b7fae9c8ac7037183c9513b8f2076ba75caadf481913c99e5814e060"
+    },
+    {
+      "gist_file": "pyc--director_core--app.pyc",
+      "project_path": "original-bytecode/director_core/app.pyc",
+      "sha256": "06a4f65d92899ed18707fd8b66d030e8b921e390a60781ec6e067be5f3c33cf3"
+    },
+    {
+      "gist_file": "pyc--director_core--executables.pyc",
+      "project_path": "original-bytecode/director_core/executables.pyc",
+      "sha256": "148be1bc94a412790db503290bc740467208bc976938b295a4dca46cd70441fb"
+    },
+    {
+      "gist_file": "pyc--director_core--image_show.pyc",
+      "project_path": "original-bytecode/director_core/image_show.pyc",
+      "sha256": "92e7a047719e159fb4e7bda4727b2ade19fa991a734f2c2f9dd1ed4e4f4d8978"
+    },
+    {
+      "gist_file": "pyc--director_core--paths.pyc",
+      "project_path": "original-bytecode/director_core/paths.pyc",
+      "sha256": "ad51c8a57df6bd17607dba0a2c1e91c44e14940e8fe1129b5e59d1bb197f8378"
+    },
+    {
+      "gist_file": "pyc--director_core--process_manager.pyc",
+      "project_path": "original-bytecode/director_core/process_manager.pyc",
+      "sha256": "b511ba3e646508f0dd276d30ed8177d5a4cc911fc27f9bbfeaeeab08d6fbe3c7"
+    },
+    {
+      "gist_file": "pyc--director_core--project_scanner.pyc",
+      "project_path": "original-bytecode/director_core/project_scanner.pyc",
+      "sha256": "60a38dfe500b5c715a891c590548c79dfc876da04f0962a7bcd375833ce92179"
+    },
+    {
+      "gist_file": "pyc--director_core--screens.pyc",
+      "project_path": "original-bytecode/director_core/screens.pyc",
+      "sha256": "123f00ac883721f6f2ac69026ea1d867ebd53b077fafeb349091cf6b3541932f"
+    },
+    {
+      "gist_file": "pyc--director_core--settings.pyc",
+      "project_path": "original-bytecode/director_core/settings.pyc",
+      "sha256": "e45230c2b4c47c6f8397e784e0fe43448cbd2e9c86aa2ce3711ec3487660b166"
+    },
+    {
+      "gist_file": "pyc--director_core--telegram_connect_dialog.pyc",
+      "project_path": "original-bytecode/director_core/telegram_connect_dialog.pyc",
+      "sha256": "e110867a6557f8430e515ee8e21ef290fc904027442f4a2447c3f5519a3ad376"
+    },
+    {
+      "gist_file": "pyc--director_core--telegram_receiver.pyc",
+      "project_path": "original-bytecode/director_core/telegram_receiver.pyc",
+      "sha256": "560cc5ff5b7d3c312df55f82a1fbc284c015b7b16efb288d0e28c578d5ac2eb1"
+    },
+    {
+      "gist_file": "pyc--director_core--timer.pyc",
+      "project_path": "original-bytecode/director_core/timer.pyc",
+      "sha256": "15d50f45f4937d31a137195dc1db0c530398cdf3ae30a894492669fe580e94d5"
+    },
+    {
+      "gist_file": "dis--conference_director.dis.txt",
+      "project_path": "disassembly/conference_director.dis.txt",
+      "sha256": "113ae94324df82a3092a2e180b16323a4dafca45e9004b1c4307b3f0e47fc8aa"
+    },
+    {
+      "gist_file": "dis--director_core--__init__.dis.txt",
+      "project_path": "disassembly/director_core/__init__.dis.txt",
+      "sha256": "5e621c373ac64d8a70c02f40f9c493a424c365513da54e705ed0cfb7d8201252"
+    },
+    {
+      "gist_file": "dis--director_core--app.dis.txt",
+      "project_path": "disassembly/director_core/app.dis.txt",
+      "sha256": "e13c5bbdfb13b00bd7e4988d42cb335762caa0d46b5cc8e9514304906ad85888"
+    },
+    {
+      "gist_file": "dis--director_core--executables.dis.txt",
+      "project_path": "disassembly/director_core/executables.dis.txt",
+      "sha256": "b269c8db03712e31ad2721bbba86d6e788802964fc8005ded5d167bd8cdf4697"
+    },
+    {
+      "gist_file": "dis--director_core--image_show.dis.txt",
+      "project_path": "disassembly/director_core/image_show.dis.txt",
+      "sha256": "04e7d1c59be2f7a39e0e6ecaaa8653222d8fee7f370546b55690f4e199191cd8"
+    },
+    {
+      "gist_file": "dis--director_core--paths.dis.txt",
+      "project_path": "disassembly/director_core/paths.dis.txt",
+      "sha256": "32e77a2bbf339f90516e94df82f3019af34ecbc75c06ca4be83e37b2d818400d"
+    },
+    {
+      "gist_file": "dis--director_core--process_manager.dis.txt",
+      "project_path": "disassembly/director_core/process_manager.dis.txt",
+      "sha256": "bb443e220de4e9b4b8bc1901add6a9932fdc7e4b6642d61bea4ed9a1e05131dd"
+    },
+    {
+      "gist_file": "dis--director_core--project_scanner.dis.txt",
+      "project_path": "disassembly/director_core/project_scanner.dis.txt",
+      "sha256": "95abc658dd55716447b7e90cc7df63f4ecfcb70a6ffc73a90f79220fad85e65a"
+    },
+    {
+      "gist_file": "dis--director_core--screens.dis.txt",
+      "project_path": "disassembly/director_core/screens.dis.txt",
+      "sha256": "d4decd7a922a499fb6244a022f571df93d777e55f538fdd8a26eec6c1523fbd3"
+    },
+    {
+      "gist_file": "dis--director_core--settings.dis.txt",
+      "project_path": "disassembly/director_core/settings.dis.txt",
+      "sha256": "b2696c99985c759ba970ab597a64656110c0eb77c454e1f6b3dbe9770391436b"
+    },
+    {
+      "gist_file": "dis--director_core--telegram_connect_dialog.dis.txt",
+      "project_path": "disassembly/director_core/telegram_connect_dialog.dis.txt",
+      "sha256": "56338890227f47aafc416df9b4c48daf32a8dc8bfd0185986ebb82eea288b1d5"
+    },
+    {
+      "gist_file": "dis--director_core--telegram_receiver.dis.txt",
+      "project_path": "disassembly/director_core/telegram_receiver.dis.txt",
+      "sha256": "e71172a09aa5cfa9436630ff01d2aca29ef3513cf2c5bcc2f86fb37906d07169"
+    },
+    {
+      "gist_file": "dis--director_core--timer.dis.txt",
+      "project_path": "disassembly/director_core/timer.dis.txt",
+      "sha256": "c8700aafa199b33f825388cc870d53c621961e20216398d9c7a1556db6862abb"
+    },
+    {
+      "gist_file": "LICENSE.txt",
+      "project_path": "LICENSE.txt",
+      "sha256": "215ac84d7daa36ca3aafc628581c7f39e3ca0d5f5df5a56df9cc62ac6882d1bd"
+    },
+    {
+      "gist_file": "LICENSE-SCOPE.md",
+      "project_path": "LICENSE-SCOPE.md",
+      "sha256": "eae8de9460cc9f9bb94e555d85f4d084a32598df3731f3bcd7042d796cbc2e3c"
+    },
+    {
+      "gist_file": "THIRD-PARTY.md",
+      "project_path": "THIRD-PARTY.md",
+      "sha256": "8c16af391b044f23db8eca4f165dd5bf97fc8a1c4e7775c2a6f9ffec0751c2f8"
+    },
+    {
+      "gist_file": "THIRD-PARTY-GPL-3.0.txt",
+      "project_path": "THIRD-PARTY-GPL-3.0.txt",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "gist_file": "THIRD-PARTY-LGPL-3.0.txt",
+      "project_path": "THIRD-PARTY-LGPL-3.0.txt",
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "gist_file": "THIRD-PARTY-PyInstaller-COPYING.txt",
+      "project_path": "THIRD-PARTY-PyInstaller-COPYING.txt",
+      "sha256": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
+    },
+    {
+      "gist_file": "THIRD-PARTY-Python-LICENSE.txt",
+      "project_path": "THIRD-PARTY-Python-LICENSE.txt",
+      "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+    },
+    {
+      "gist_file": "THIRD-PARTY-Qt-GPL-exception.txt",
+      "project_path": "THIRD-PARTY-Qt-GPL-exception.txt",
+      "sha256": "40678d338ce53cd93f8b22b281a2ecbcaa3ee65ce60b25ffb0c462b0530846b2"
+    }
+  ],
+  "source_module_count": 13,
+  "generated_source_build_files": [
+    "ConferenceDirector.spec",
+    "build.ps1",
+    "requirements.txt",
+    "requirements-build.txt"
+  ]
+}
