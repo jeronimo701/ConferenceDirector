@@ -1,0 +1,14 @@
+{
+  "installer_compile": "PASS",
+  "installer_exit_code": 0,
+  "installed_files_sha256_match": 213,
+  "unexpected_files": 0,
+  "saved_settings_included": false,
+  "original_exe_unchanged": true,
+  "gitleaks_embedded_application_strings": "PASS",
+  "source_code_found": false,
+  "test_directory_contains_cyrillic": true,
+  "application_executed": false,
+  "hardware_network_and_external_app_tests": false,
+  "installer_creates_uninstaller_or_registry_entry": false
+}
