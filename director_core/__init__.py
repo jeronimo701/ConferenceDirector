@@ -1,2 +1,1 @@
-'''Conference Director application package.'''
-
+"""Conference Director application package."""

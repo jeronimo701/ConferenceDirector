@@ -1,4 +1,4 @@
-# Generated build recipe for the recovered sources; not an original recovered file.
+# Generated build recipe; works with the found original source. Not an original author build recipe.
 from pathlib import Path
 project_root = Path(SPECPATH)
 a = Analysis([str(project_root / 'conference_director.py')], pathex=[str(project_root)], binaries=[], datas=[], hiddenimports=[], hookspath=[], hooksconfig={}, runtime_hooks=[], excludes=[], noarchive=False, optimize=0)

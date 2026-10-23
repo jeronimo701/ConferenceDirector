@@ -1,11 +1,13 @@
-from PySide6.QtCore import (QObject, Qt, QTimer, Signal)
-from PySide6.QtGui import (QColor, QFont, QPainter, QPixmap)
-from PySide6.QtWidgets import (QLabel, QVBoxLayout, QWidget)
+from PySide6.QtCore import QObject, Qt, QTimer, Signal
+from PySide6.QtGui import QColor, QFont, QPainter, QPixmap
+from PySide6.QtWidgets import QLabel, QVBoxLayout, QWidget
+
 
 class TimerLogic(QObject):
     time_changed = Signal(str)
     finished = Signal()
     pre_alert = Signal()
+
     def __init__(self):
         super().__init__()
         self.duration = 0
@@ -42,7 +44,7 @@ class TimerLogic(QObject):
     def emit_time(self):
         minutes, seconds = divmod(self.time_left, 60)
         hours, minutes = divmod(minutes, 60)
-        self.time_changed.emit(f'{hours:02d}:{minutes:02d}:{seconds:02d}')
+        self.time_changed.emit(f"{hours:02d}:{minutes:02d}:{seconds:02d}")
 
     def pause_toggle(self):
         self.is_paused = not self.is_paused
@@ -59,10 +61,10 @@ class TimerLogic(QObject):
 class OutlinedLabel(QWidget):
     def __init__(self):
         super().__init__()
-        self.text = '00:00:00'
-        self.font = QFont('Arial', 160)
-        self.text_color = QColor('white')
-        self.outline_color = QColor('black')
+        self.text = "00:00:00"
+        self.font = QFont("Arial", 160)
+        self.text_color = QColor("white")
+        self.outline_color = QColor("black")
         self.outline_width = 4
         self.visible = True
         self.blink_timer = QTimer()
@@ -98,7 +100,7 @@ class OutlinedLabel(QWidget):
         painter.setRenderHint(QPainter.Antialiasing)
         painter.setFont(self.font)
         metrics = painter.fontMetrics()
-        text_width = metrics.horizontalAdvance('00:00:00')
+        text_width = metrics.horizontalAdvance("00:00:00")
         x = (self.width() - text_width) // 2
         y = (self.height() + metrics.height()) // 2 - metrics.descent()
         painter.setPen(self.outline_color)
@@ -114,19 +116,26 @@ class FullScreenTimer(QWidget):
     def __init__(self, screen, settings):
         super().__init__()
         self.setWindowFlag(Qt.FramelessWindowHint)
-        self.setStyleSheet('background-color: black;')
+        self.setStyleSheet("background-color: black;")
         self.setScreen(screen)
         self.setGeometry(screen.geometry())
+
         self.background = QLabel(self)
         self.background.setScaledContents(True)
         self.background.setGeometry(self.rect())
-        if settings['bg_path']:
-            self.background.setPixmap(QPixmap(settings['bg_path']))
+        if settings["bg_path"]:
+            self.background.setPixmap(QPixmap(settings["bg_path"]))
+
         self.label = OutlinedLabel()
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
         layout.addWidget(self.label)
-        self.label.set_style(QFont(settings['font'], settings['font_size']), settings['text_color'], settings['outline_color'], settings['outline_width'])
+        self.label.set_style(
+            QFont(settings["font"], settings["font_size"]),
+            settings["text_color"],
+            settings["outline_color"],
+            settings["outline_width"],
+        )
         self.showFullScreen()
         self.setGeometry(screen.geometry())
 
@@ -135,5 +144,3 @@ class FullScreenTimer(QWidget):
 
     def update_time(self, text):
         self.label.set_text(text)
-
-

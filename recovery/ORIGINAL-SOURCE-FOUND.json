@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-23",
+  "modules": [
+    {
+      "path": "director_core/app.py",
+      "sha256": "689644efec66eb358325a702b85f2db86f6a7a46eef3c54ed75e08d362e373ea"
+    },
+    {
+      "path": "director_core/executables.py",
+      "sha256": "7e80b2ddfccb22daee81d846f13168b91f305b3d770cfaf65ee666bc217f75c6"
+    },
+    {
+      "path": "director_core/image_show.py",
+      "sha256": "74e1f04380d191af881cfc5aa40f80a448ada7ed610201668be950f5a0b8e048"
+    },
+    {
+      "path": "director_core/paths.py",
+      "sha256": "f3f584b8b036e9fd84808d89e3a87fbf3d41618fec9e7ee14e578477e8011246"
+    },
+    {
+      "path": "director_core/process_manager.py",
+      "sha256": "181f17f2533c3f8f91f48933cb887733110d9eebafc47c3a49c2078acee1d4ec"
+    },
+    {
+      "path": "director_core/project_scanner.py",
+      "sha256": "a9511104dc7f05032fb14e46b196145f0def7b690c3b448d2db404ec96de19bf"
+    },
+    {
+      "path": "director_core/screens.py",
+      "sha256": "78b4f831f939a295961b4cfd9c8f53a37879907429e2eb9a6bc6211992d8d0c2"
+    },
+    {
+      "path": "director_core/settings.py",
+      "sha256": "90d34e905447b7f8f9e6d39a77c26d3fc6c46deaed7e8d1bcdec8b92c9080700"
+    },
+    {
+      "path": "director_core/telegram_connect_dialog.py",
+      "sha256": "3b9a49f9fd8260caff01841ce94dd88a7aef61f37cfbdc00370752dd69fae588"
+    },
+    {
+      "path": "director_core/telegram_receiver.py",
+      "sha256": "71257612c237a4a313bcc288211d756518c85909113c84ec3eb2125643848343"
+    },
+    {
+      "path": "director_core/timer.py",
+      "sha256": "922ca308872733ea25ebdbc3ee2067fb9ffd11bcecfbd04cc01712fdf8eed1df"
+    },
+    {
+      "path": "director_core/__init__.py",
+      "sha256": "01d8804062200b6f5e6674ed906d0dc601f06b388c935738a1d3e7967f2744fc"
+    },
+    {
+      "path": "conference_director.py",
+      "sha256": "50d2c6e7503cba7f38caad9b0ed51323c24c395612abada50ac3cc64de78bfaf"
+    }
+  ],
+  "comparison": {
+    "source_path": "D:\\[MY]\\Исходники Python\\Актуальные версии\\ConferenceDirector 1.1.2",
+    "matched": 217,
+    "total": 217,
+    "modules": [
+      {
+        "file": "conference_director.py",
+        "match": 1,
+        "total": 1
+      },
+      {
+        "file": "director_core\\app.py",
+        "match": 139,
+        "total": 139
+      },
+      {
+        "file": "director_core\\executables.py",
+        "match": 5,
+        "total": 5
+      },
+      {
+        "file": "director_core\\image_show.py",
+        "match": 6,
+        "total": 6
+      },
+      {
+        "file": "director_core\\paths.py",
+        "match": 1,
+        "total": 1
+      },
+      {
+        "file": "director_core\\process_manager.py",
+        "match": 6,
+        "total": 6
+      },
+      {
+        "file": "director_core\\project_scanner.py",
+        "match": 6,
+        "total": 6
+      },
+      {
+        "file": "director_core\\screens.py",
+        "match": 6,
+        "total": 6
+      },
+      {
+        "file": "director_core\\settings.py",
+        "match": 4,
+        "total": 4
+      },
+      {
+        "file": "director_core\\telegram_connect_dialog.py",
+        "match": 11,
+        "total": 11
+      },
+      {
+        "file": "director_core\\telegram_receiver.py",
+        "match": 10,
+        "total": 10
+      },
+      {
+        "file": "director_core\\timer.py",
+        "match": 21,
+        "total": 21
+      },
+      {
+        "file": "director_core\\__init__.py",
+        "match": 1,
+        "total": 1
+      }
+    ]
+  },
+  "note": "Found author source replaces decompiled files; previous recovered code remains in Git history. Existing 1.1.2 binaries/tags unchanged."
+}
